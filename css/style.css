@@ -4,6 +4,7 @@
 
 .navbar .nav-link {
     color: black;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .navbar .nav-link:hover,
@@ -58,11 +59,15 @@ p {
 
 
 body {
-    min-height: 110vh;
+    min-height: 150vh;
     background-image: url("/Images/background_home.jpg");
     background-position: top;
     background-size: 100%;
     background-repeat: no-repeat;
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     color: black !important;
+}
+
+ul li a{
+    transition: all ease 0.5s;
 }
