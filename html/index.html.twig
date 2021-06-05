@@ -37,7 +37,7 @@
     {% elseif get.page == 'announcements' %}
         {% include 'announcements.html' %}
     {% else %}
-        {$ include 'main.html' $}
+        {% include 'main.html' %}
     {% endif %}
 {% else %}
     {% include 'main.html' %}
