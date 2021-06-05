@@ -23,7 +23,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="nav navbar-nav mr-sm-2">
                     <li class="nav-item active"><a href="?page=main" class="nav-link font-weight-bold">Strona główna<span class="sr-only">(current)</span></a></li>
-                    <li class="nav-item"><a href="?page=annoucments" class="nav-link font-weight-bold">Ogłoszenia parafialne</a></li>
+                    <li class="nav-item"><a href="?page=announcements" class="nav-link font-weight-bold">Ogłoszenia parafialne</a></li>
                     <li class="nav-item"><a href="?page=reservations" class="nav-link font-weight-bold">Rezerwacja miejsc</a></li>
                     <li class="nav-item"><a href="?page=donate" class="nav-link font-weight-bold">Darowizny </a></li>
                 </ul>
@@ -35,7 +35,7 @@
     {% if get.page == 'main' %}
         {% include 'main.html' %}
     {% else %}
-        {$ include 'main.html' $}
+        {% include 'main.html' %}
     {% endif %}
 {% else %}
     {% include 'main.html' %}
