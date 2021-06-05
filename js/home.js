@@ -3,10 +3,12 @@ $(function () {
         if ( $(window).scrollTop() > 1 ) {
             $('.navbar').addClass('active');
             $('.bg-image').addClass('scrolled');
+            $('.announcements').addClass('scrolled');
             //$('.span').addClass('scrolled');
         } else {
             $('.navbar').removeClass('active');
             $('.bg-image').removeClass('scrolled');
+            $('.announcements').removeClass('scrolled');
             //$('.span').removeClass('scrolled');
         }
     });

@@ -105,6 +105,50 @@
 }
 
 
+.announcements {
+   min-height: 100vh;
+  font-size:40px;
+  text-align:center;
+  position: relative;
+  transition: all 0.4s;
+}
+
+.announcements::before{
+    transition: all 0.4s;
+
+  content:"";
+  background: url("/Images/pulpit.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width:100%;
+  min-height:100vh;
+  position: absolute;
+  left:0;
+  top:0;
+  z-index:-1;
+  filter: brightness(0.5);
+}
+
+.announcements.scrolled {
+    min-height: 70vh;
+}
+
+.announcements.scrolled::before{
+    transition: all 0.4s;
+    content:"";
+  background: url("/Images/pulpit.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width:100%;
+  min-height:70vh;
+  position: absolute;
+  left:0;
+  top:0;
+  z-index:-1;
+  filter: brightness(0.4);
+}
+
+
 .main-text {
     text-align: center;
     padding-top: 20%;
