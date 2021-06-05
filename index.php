@@ -8,7 +8,5 @@ require __DIR__ . '/vendor/autoload.php';
 $loader = new \Twig\Loader\FilesystemLoader('html');
 $twig = new \Twig\Environment($loader);
 
-echo $twig->render('index.html', array(
-        'variable' => 'Twig',
-));
 
+echo $twig->render('index.html.twig', ['post' => $_POST, 'session' =>$_SESSION,'get' => $_GET]);
