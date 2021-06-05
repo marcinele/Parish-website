@@ -1,9 +1,13 @@
 $(function () {
     $(window).on('scroll', function () {
-        if ( $(window).scrollTop() > 10 ) {
+        if ( $(window).scrollTop() > 1 ) {
             $('.navbar').addClass('active');
+            $('.bg-image').addClass('scrolled');
+            //$('.span').addClass('scrolled');
         } else {
             $('.navbar').removeClass('active');
+            $('.bg-image').removeClass('scrolled');
+            //$('.span').removeClass('scrolled');
         }
     });
 });
@@ -17,3 +21,11 @@ $(function() {
     });
 
 });
+
+$(function(){
+    $(window).on('scroll', function(){
+        if($(this).scrollTop() > 1){
+        } else {
+        }
+    })
+})
