@@ -41,6 +41,14 @@
                             <a class="nav-link" href="?page=donate">Darowizny</a>
                         </li>
                     </ul>
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="?page=register"> <i class="fa fa-user-plus fa-lg"></i></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="?page=login"><i class="fa fa-user fa-lg"></i></a>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </nav>
@@ -51,6 +59,10 @@
         {% include 'main.html' %}
     {% elseif get.page == 'announcements' %}
         {% include 'announcements.html' %}
+    {% elseif get.page == 'register' %}
+        {% include 'register.html' %}
+    {% elseif get.page == 'login' %}
+        {% include 'login.html' %}
     {% else %}
         {% include 'main.html' %}
     {% endif %}
