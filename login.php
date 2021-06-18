@@ -33,8 +33,7 @@ if (isset($_POST['loginSubmit'])) {
         if (password_verify($_POST['password'], $user['password'])) {
             $_SESSION['id'] = $user['id'];
             $_SESSION['email'] = $user['email'];
-            $id = $_SESSION['id'];
-            $email = $_SESSION['email'];
+            $_SESSION['username'] = $user['username'];
             echo "<script> alert('Poprawnie zalgowano.') </script>";
 
         } else {
