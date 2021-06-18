@@ -1,6 +1,6 @@
 $(function () {
     $(window).on('scroll', function () {
-        if ( $(window).scrollTop() > 1 ) {
+        if ( $(window).scrollTop() > 0 ) {
             $('.navbar').addClass('active');
             $('.bg-image').addClass('scrolled');
             $('.announcements').addClass('scrolled');
