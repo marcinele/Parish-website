@@ -1,36 +1,36 @@
 <div class="span">
     <div class="register_login">
-        <form>
+        <form method="POST" action="../register.php">
             <p style="font-size:40px; font-weight: bold;">Zarejestruj się</p> <br>
             <label>
                 <p class="label-txt">Nazwa użytkownika</p>
-                <input type="text" class="input" required>
+                <input type="text" name="username" class="input" required>
                 <div class="line-box">
                     <div class="line"></div>
                 </div>
             </label> <br>
             <label>
                 <p class="label-txt">Adres email</p>
-                <input type="text" class="input" required>
+                <input type="text" name="email" class="input" required>
                 <div class="line-box">
                     <div class="line"></div>
                 </div>
             </label> <br>
             <label>
                 <p class="label-txt">Hasło</p>
-                <input type="password" class="input" required>
+                <input type="password" name="password" class="input" required>
                 <div class="line-box">
                     <div class="line"></div>
                 </div>
             </label> <br>
             <label>
                 <p class="label-txt">Powtórz hasło</p>
-                <input type="password" class="input" required>
+                <input type="password" name="repeated_password" class="input" required>
                 <div class="line-box">
                     <div class="line"></div>
                 </div>
             </label> <br>
-            <button type="submit">Zarejestruj się</button>
+            <button type="submit" name="registerSubmit">Zarejestruj się</button>
         </form>
     </div>
 </div>
