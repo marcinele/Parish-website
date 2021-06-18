@@ -17,6 +17,9 @@ if (isset($config) && is_array($config)) {
 }
 
 if (isset($_POST['registerSubmit'])) {
+    if (isset($_SESSION['id'])){
+        echo "<script> alert('O, tu już się ktoś zalogował!') </script>";
+    }
     $username = $_POST['username'];
     $email = $_POST['email'];
     $password = $_POST['password'];
@@ -30,7 +33,7 @@ if (isset($_POST['registerSubmit'])) {
     header("Location: https://s103.labagh.pl/?page=register");
     if (preg_match('/^[\w]+@([\w-]+\.)+[\w-]{2,4}$/D', $email)) {
         try {
-            /* UWAGA, TO WYPISYWANIE NIE DZIAŁA, TRZEBA NAPRAWIĆ, OGÓLNIE TO PRZECHODZENIE MIĘDZY PHP I HTML TO JAKAŚ PAŁĄ */
+            // UWAGA, TO WYPISYWANIE NIE DZIAŁA, TRZEBA NAPRAWIĆ, OGÓLNIE TO PRZECHODZENIE MIĘDZY PHP I HTML TO JAKAŚ PAŁĄ
             $stmt = $dbh->prepare("INSERT INTO users (id, username, email, password, created)
                                          VALUES (null, :username, :email, :password, NOW())");
             $stmt->execute([':username' => $username, ':email' => $email, ':password' => $password_hash]);

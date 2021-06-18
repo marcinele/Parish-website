@@ -14,7 +14,7 @@
 
   
   {% if get.page is defined %}
-    <link rel="stylesheet" href={{ "/css/" ~ get.page ~ ".css" }}>
+      <link rel="stylesheet" href={{ "/css/" ~ get.page ~ ".css" }}>
   {% else %}
     <link rel="stylesheet" href="/css/main.css">
   {% endif %}
@@ -62,8 +62,6 @@
         </nav>
     </header>
 
-<body>
-
 {% if get.page is defined %}
     {% if get.page == 'main' %}
         {% include 'main.html' %}
@@ -80,5 +78,10 @@
     {% include 'main.html' %}
 {% endif %}
 
-
+{% if(session.id is defined and session.email is defined) %}
+    <script> alert('Użytkownik jest zalogowany. {{ session.id }} {{ session.email }} lul') </script>
+{% else %}
+    <script> alert('Użytkownik NIE jest zalogowany. {{ session.id }} {{ session.email }} lul') </script>
+{% endif %}
 </body>
+
