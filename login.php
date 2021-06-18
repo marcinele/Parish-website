@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 include("config.inc.php");
 
 if (isset($config) && is_array($config)) {
@@ -16,6 +18,12 @@ if (isset($config) && is_array($config)) {
     exit("Nie znaleziono konfiguracji bazy danych.");
 }
 
+if (isset($_POST['logoutSubmit'])) {
+    unset($_SESSION['id']);
+    unset($_SESSION['email']);
+    echo "<script> location.href='../'; </script>";
+}
+
 if (isset($_POST['loginSubmit'])) {
     $stmt = $dbh->prepare("SELECT * FROM users WHERE email = :email");
     $stmt->execute([':email' => $_POST['loginEmail']]);
@@ -27,9 +35,6 @@ if (isset($_POST['loginSubmit'])) {
             $_SESSION['email'] = $user['email'];
             $id = $_SESSION['id'];
             $email = $_SESSION['email'];
-            echo "<script> alert('$id') </script>";
-            echo "<script> alert('$email') </script>";
-
             echo "<script> alert('Poprawnie zalgowano.') </script>";
 
         } else {
@@ -38,6 +43,6 @@ if (isset($_POST['loginSubmit'])) {
     } else {
         echo "<script> alert('Podany email jest niepoprawny.') </script>";
     }
-    echo "<script> location.href='../?page=login'; </script>";
+    echo "<script> location.href='../'; </script>";
 }
 

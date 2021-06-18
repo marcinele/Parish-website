@@ -45,3 +45,5 @@ $(document).ready(function(){
     });
 
 });
+
+document.getElementById("logoutSubmit").submit();
