@@ -9,4 +9,4 @@ $loader = new \Twig\Loader\FilesystemLoader('html');
 $twig = new \Twig\Environment($loader);
 
 
-echo $twig->render('index.html.twig', ['post' => $_POST, 'session' =>$_SESSION,'get' => $_GET]);
+echo $twig->render('index.html.twig', ['post' => $_POST, 'session' => $_SESSION, 'get' => $_GET]);
