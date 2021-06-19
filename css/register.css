@@ -19,3 +19,11 @@ body {
 #info {
     color: red;
 }
+
+.reCaptchaDiv {
+    text-align: center;
+}
+
+.g-recaptcha {
+    display: inline-block;
+}
