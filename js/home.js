@@ -45,5 +45,7 @@ $(document).ready(function(){
     });
 
 });
-
-document.getElementById("logoutSubmit").submit();
+try {
+    document.getElementById("logoutSubmit").submit();
+}
+catch(TypeError){}

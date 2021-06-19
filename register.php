@@ -2,6 +2,8 @@
 
 include("config.inc.php");
 
+use ReCaptcha\ReCaptcha;
+
 if (isset($config) && is_array($config)) {
 
     try {
@@ -16,10 +18,9 @@ if (isset($config) && is_array($config)) {
     exit("Nie znaleziono konfiguracji bazy danych.");
 }
 
-if (isset($_POST['registerSubmit'])) {
-    if (isset($_SESSION['id'])){
-        echo "<script> alert('O, tu już się ktoś zalogował!') </script>";
-    }
+$isBot = True;
+
+if (isset($_POST['registerSubmit']) && $isBot == False) {
     $username = $_POST['username'];
     $email = $_POST['email'];
     $password = $_POST['password'];
@@ -45,3 +46,18 @@ if (isset($_POST['registerSubmit'])) {
         print '<p style="font-weight: bold; color: red;"> Niepoprawny email.</p>';
     }
 }
+
+if (isset($_POST['g-recaptcha-response'])) {
+    $captcha = $_POST['g-recaptcha-response'];
+    $secretKey = $config['recaptcha_private'];
+    $ip = $_SERVER['REMOTE_ADDR'];
+    $url = 'https://www.google.com/recaptcha/api/siteverify?secret=' . urlencode($secretKey) . '&response=' . urlencode($captcha);
+    $response = file_get_contents($url);
+    $responseKeys = json_decode($response, true);
+    if ($responseKeys["success"]) {
+        $isBot = False;
+    } else {
+        $isBot = True;
+    }
+}
+$public_key = $config['recaptcha_public'];

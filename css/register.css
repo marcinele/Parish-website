@@ -7,3 +7,15 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+.glyphicon-remove {
+    color: red;
+}
+
+.glyphicon-ok {
+    color: green;
+}
+
+#info {
+    color: red;
+}
