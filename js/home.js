@@ -45,6 +45,18 @@ $(document).ready(function(){
     });
 
 });
+
+$(function() {
+    $(".read-more-button").mouseover(function(){
+        //$(".read-more-button").css("opacity", "0.3");
+        $(this).css("opacity", "1");
+    });
+    $(".read-more-button").mouseout(function(){
+        $(".read-more-button").css("opacity", "0.5");
+    });
+
+});
+
 try {
     document.getElementById("logoutSubmit").submit();
 }

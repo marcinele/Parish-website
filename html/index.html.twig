@@ -91,6 +91,10 @@
         {% include 'register.html' %}
     {% elseif get.page == 'login' %}
         {% include 'login.html' %}
+    {% elseif get.page == 'reservations' %}
+        {% include 'reservations.html' %}
+    {% elseif get.page == 'donate' %}
+        {% include 'donate.html' %}
     {% else %}
         {% include 'main.html' %}
     {% endif %}
