@@ -44,22 +44,22 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav" id="menu-buttons">
                     <li class="nav-item active">
-                        <a class="nav-link" href="?page=main">Strona główna</a>
+                        <a class="nav-link" href="/main">Strona główna</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="?page=announcements">Ogłoszenia parafialne</a>
+                        <a class="nav-link" href="/announcements">Ogłoszenia parafialne</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="?page=reservations">Rezerwacja miejsc</a>
+                        <a class="nav-link" href="/reservations">Rezerwacja miejsc</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="?page=donate">Darowizny</a>
+                        <a class="nav-link" href="/donate">Darowizny</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav ml-auto">
                     {% if(session.id is defined and session.email is defined) %}
                         <li class="nav-item">
-                            <a class="nav-link" href="?page=yourAccount">{{ session.username }}</a>
+                            <a class="nav-link" href="/yourAccount">{{ session.username }}</a>
                         </li>
                         <li class="nav-item">
                             <form action="../login.php" method="POST">
@@ -70,10 +70,10 @@
                         </li>
                     {% else %}
                         <li class="nav-item">
-                            <a class="nav-link" href="?page=register"> <i class="fa fa-user-plus fa-lg"></i></a>
+                            <a class="nav-link" href="/register"> <i class="fa fa-user-plus fa-lg"></i></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="?page=login"><i class="fa fa-user fa-lg"></i></a>
+                            <a class="nav-link" href="/login"><i class="fa fa-user fa-lg"></i></a>
                         </li>
                     {% endif %}
                 </ul>
