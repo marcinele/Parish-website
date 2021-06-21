@@ -89,3 +89,24 @@ button:hover {
 ul li a{
     transition: all ease 0.5s;
 }
+
+.navbar.active {
+    background: #850f71;
+    box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+.navbar.active .navbar-brand {
+    color: #555;
+}
+
+/* Change navbar styling on small viewports */
+@media (max-width: 991.98px) {
+    .navbar {
+        background: #fff;
+    }
+
+    .navbar .navbar-brand, .navbar .nav-link {
+        color: #555;
+    }
+}

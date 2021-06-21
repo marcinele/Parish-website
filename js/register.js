@@ -1,4 +1,5 @@
 var isRecaptchaChecked = false;
+var recaptchaExpired = false;
 
 function ValidatePassword() {
     var repeatedPass = '^' + RepeatedPassword() + '$';
@@ -39,7 +40,7 @@ function ValidatePassword() {
         }
     }
     isEverythingCorrect ? console.log("Wszystko jest git!") : console.log("Nie wszystko jest git.");
-    if (isEverythingCorrect && isRecaptchaChecked) {
+    if (isEverythingCorrect && isRecaptchaChecked && !recaptchaExpired) {
         document.getElementById("submitButton").disabled = false;
         document.getElementById("submitButton").enabled = true;
         document.getElementById("submitButton").style.color = 'green';
@@ -66,5 +67,11 @@ $(document).ready(function () {
 
 function recaptchaCallback() {
     isRecaptchaChecked = true;
+    recaptchaExpired = false;
+    ValidatePassword();
+}
+
+function expiredCallback(){
+    recaptchaExpired = true;
     ValidatePassword();
 }
