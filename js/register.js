@@ -67,7 +67,7 @@ $(document).ready(function () {
 
 function recaptchaCallback() {
     isRecaptchaChecked = true;
-    recaptchaExpired = false;
+    recaptchaExpired = false; // o
     ValidatePassword();
 }
 
