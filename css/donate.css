@@ -124,3 +124,7 @@ ul li a{
 .navbar.active .navbar-brand {
     color: #555;
 }
+
+.wallet-addr {
+    color: white !important;
+}
