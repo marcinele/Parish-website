@@ -177,3 +177,44 @@ ul li a{
     transition: 0.4s;
     opacity: 0.5;
 }
+
+.text-gray {
+    color: #aaa;
+}
+
+.list-group-item {
+    transition: transform .2s; /* Animation */
+}
+
+.list-group-item:hover {
+    transform: scale(1.05); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
+.list-group-item:after {
+    content: '';
+    display: block;
+    margin: auto;
+    height: 3px;
+    width: 0;
+    background: transparent;
+    transition: width .6s ease, background-color .6s ease;
+}
+.list-group-item:hover:after {
+    width: 100%;
+    background: #574040;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+a:hover {
+    color: black;
+    text-decoration: none;
+}
+
+.list-group-item{
+    width: 100%;
+}
+
