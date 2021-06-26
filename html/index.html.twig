@@ -17,15 +17,13 @@
             integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
             crossorigin="anonymous"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% block head %}
+
+    {% endblock %}
     <link rel="stylesheet" href="/css/style.css">
+    {% block style %}
 
-
-    {% if get.page is defined %}
-        <link rel="stylesheet" href={{ "/css/" ~ get.page ~ ".css" }}>
-    {% else %}
-        <link rel="stylesheet" href="/css/main.css">
-    {% endif %}
-
+    {% endblock %}
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
@@ -44,22 +42,22 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav" id="menu-buttons">
                     <li class="nav-item active">
-                        <a class="nav-link" href="/main">Strona główna</a>
+                        <a class="nav-link" href="?page=main">Strona główna</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/announcements">Ogłoszenia parafialne</a>
+                        <a class="nav-link" href="?page=announcements">Ogłoszenia parafialne</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/reservations">Rezerwacja miejsc</a>
+                        <a class="nav-link" href="?page=reservations">Rezerwacja miejsc</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/donate">Darowizny</a>
+                        <a class="nav-link" href="?page=donate">Darowizny</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav ml-auto">
                     {% if(session.id is defined and session.email is defined) %}
                         <li class="nav-item">
-                            <a class="nav-link" href="/yourAccount">{{ session.username }}</a>
+                            <a class="nav-link" href="?page=yourAccount">{{ session.username }}</a>
                         </li>
                         <li class="nav-item">
                             <form action="../login.php" method="POST">
@@ -70,10 +68,10 @@
                         </li>
                     {% else %}
                         <li class="nav-item">
-                            <a class="nav-link" href="/register"> <i class="fa fa-user-plus fa-lg"></i></a>
+                            <a class="nav-link" href="?page=register"> <i class="fa fa-user-plus fa-lg"></i></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/login"><i class="fa fa-user fa-lg"></i></a>
+                            <a class="nav-link" href="?page=login"><i class="fa fa-user fa-lg"></i></a>
                         </li>
                     {% endif %}
                 </ul>
@@ -82,25 +80,12 @@
     </nav>
 </header>
 
-{% if get.page is defined %}
-    {% if get.page == 'main' %}
-        {% include 'main.html' %}
-    {% elseif get.page == 'announcements' %}
-        {% include 'announcements.html' %}
-    {% elseif get.page == 'register' %}
-        {% include 'register.html' %}
-    {% elseif get.page == 'login' %}
-        {% include 'login.html' %}
-    {% elseif get.page == 'reservations' %}
-        {% include 'reservations.html' %}
-    {% elseif get.page == 'donate' %}
-        {% include 'donate.html' %}
-    {% else %}
-        {% include 'main.html' %}
-    {% endif %}
-{% else %}
-    {% include 'main.html' %}
-{% endif %}
+
+{% block content %}
+
+{% endblock %}
 
 </body>
+
+
 
