@@ -8,10 +8,10 @@ require __DIR__ . '/vendor/autoload.php';
 $loader = new \Twig\Loader\FilesystemLoader('html');
 $twig = new \Twig\Environment($loader);
 
-/*echo $twig->render('index.html.twig', [
+echo $twig->render('index.html.twig', [
     'post' => $_POST,
     'session' => $_SESSION,
-    'get' => $_GET]); */
+    'get' => $_GET]);
 
 $allowed_pages = ['main', 'announcements', 'donate', 'login', 'register', 'reservations'];
 
@@ -22,4 +22,13 @@ if( isset($_GET['page']) && in_array($_GET['page'], $allowed_pages) ){
     } else {
         print 'Dany plik nie istnieje!';
     }
+}
+else{
+    include('main.php');
+}
+
+if (isset($_POST['logoutSubmit'])) {
+    unset($_SESSION['id']);
+    unset($_SESSION['email']);
+    echo "<script> window.location.href = '/main' </script>";
 }

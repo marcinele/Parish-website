@@ -1,11 +1,5 @@
 <?php
 
-echo $twig->render('register.html', [
-    'post' => $_POST,
-    'session' => $_SESSION,
-    'get' => $_GET]);
-
-
 include("config.inc.php");
 
 use ReCaptcha\ReCaptcha;
@@ -25,34 +19,6 @@ if (isset($config) && is_array($config)) {
 }
 
 $isBot = True;
-
-if (isset($_POST['registerSubmit']) && $isBot == False) {
-    $username = $_POST['username'];
-    $email = $_POST['email'];
-    $password = $_POST['password'];
-    $repeated_password = $_POST['repeated_password'];
-    if ($password == $repeated_password) {
-        $password_hash = password_hash($password, PASSWORD_DEFAULT);
-    }
-    else{
-        $password_hash = 'popraw hasło pajacu';
-    }
-    header("Location: https://s103.labagh.pl/?page=register");
-    if (preg_match('/^[\w]+@([\w-]+\.)+[\w-]{2,4}$/D', $email)) {
-        try {
-            // UWAGA, TO WYPISYWANIE NIE DZIAŁA, TRZEBA NAPRAWIĆ, OGÓLNIE TO PRZECHODZENIE MIĘDZY PHP I HTML TO JAKAŚ PAŁĄ
-            $stmt = $dbh->prepare("INSERT INTO users (id, username, email, password, created)
-                                         VALUES (null, :username, :email, :password, NOW())");
-            $stmt->execute([':username' => $username, ':email' => $email, ':password' => $password_hash]);
-            print '<span style="color: green;">Konto zostało założone.</span>';
-        } catch (PDOException $e) {
-            print '<span style="color: red;">Podany adres email jest już zajęty.</span>';
-        }
-    } else {
-        print '<p style="font-weight: bold; color: red;"> Niepoprawny email.</p>';
-    }
-}
-
 if (isset($_POST['g-recaptcha-response'])) {
     $captcha = $_POST['g-recaptcha-response'];
     $secretKey = $config['recaptcha_private'];
@@ -66,4 +32,32 @@ if (isset($_POST['g-recaptcha-response'])) {
         $isBot = True;
     }
 }
+
+$info ='';
+if (isset($_POST['registerSubmit']) && $isBot == False) {
+    $username = $_POST['username'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+    $repeated_password = $_POST['repeated_password'];
+    $password_hash = password_hash($password, PASSWORD_DEFAULT);
+    if (preg_match('/^[\w]+@([\w-]+\.)+[\w-]{2,4}$/D', $email)) {
+        try {
+            $stmt = $dbh->prepare("INSERT INTO users (id, username, email, password, created)
+                                         VALUES (null, :username, :email, :password, NOW())");
+            $stmt->execute([':username' => $username, ':email' => $email, ':password' => $password_hash]);
+            $info = 'Poprawnie zarejestrowano!';
+        } catch (PDOException $e) {
+            $info = 'Podany adres email jest już zajęty!';
+        }
+    } else {
+        $info = 'Niepoprawny adres email!';
+    }
+}
+
 $public_key = $config['recaptcha_public'];
+
+echo $twig->render('register.html', [
+    'post' => $_POST,
+    'session' => $_SESSION,
+    'get' => $_GET,
+    'info' => $info]);

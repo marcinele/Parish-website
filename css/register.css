@@ -27,3 +27,11 @@ body {
 .g-recaptcha {
     display: inline-block;
 }
+
+.success{
+    color: green;
+}
+
+.problem{
+    color: red;
+}
