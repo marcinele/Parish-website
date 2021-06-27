@@ -1,5 +1,10 @@
 <?php
 
+echo $twig->render('login.html', [
+    'post' => $_POST,
+    'session' => $_SESSION,
+    'get' => $_GET]);
+
 session_start();
 
 include("config.inc.php");
