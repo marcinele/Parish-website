@@ -1,9 +1,18 @@
-<head>
+{% extends "index.html.twig" %}
+
+{% block style %}
+    <link rel="stylesheet" type="text/css" href="/css/register&login.css">
+    <link rel="stylesheet" type="text/css" href="/css/register.css">
+{% endblock %}
+
+
+{% block head %}
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script type="text/javascript" src="/js/register.js"></script>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-</head>
+{% endblock %}
 
+{% block content %}
 <div class="span">
     <div class="register_login">
         <form method="POST" action="../register.php">
@@ -51,3 +60,5 @@
         </form>
     </div>
 </div>
+
+{% endblock %}
