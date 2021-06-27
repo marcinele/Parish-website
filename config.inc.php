@@ -1,7 +1,7 @@
 <?php
 
 $config = [
-    'db_host'     => 'localhost',
+    'db_host'     => '34.91.177.42',
     'db_name'     => 's103',
     'db_user'     => 's103',
     'db_password' => 'dzbco3ok'

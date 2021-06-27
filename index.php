@@ -14,8 +14,16 @@ $twig = new \Twig\Environment($loader);
     'get' => $_GET]); */
 
 $allowed_pages = ['main', 'announcements', 'donate', 'login', 'register', 'reservations'];
+$protected_pages = ['admin', 'admin_announcements', 'admin_reservations', 'add_article', 'add_reservation', 'edit_article'];
 
 if( isset($_GET['page']) && in_array($_GET['page'], $allowed_pages) ){
+    $page = $_GET['page'];
+    if(file_exists($page . '.php')){
+        include($page . '.php');
+    } else {
+        print 'Dany plik nie istnieje!';
+    }
+} else if(isset($_GET['page']) && in_array($_GET['page'], $protected_pages)){
     $page = $_GET['page'];
     if(file_exists($page . '.php')){
         include($page . '.php');
