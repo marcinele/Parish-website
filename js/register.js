@@ -59,9 +59,21 @@ function RepeatedPassword() {
     return (inputVal);
 }
 
+function registerInfo(){
+    if ($('#correctRegisterInfo').text() == 'Poprawnie zarejestrowano!'){
+        $('#correctRegisterInfo').addClass("success");
+        $('#correctRegisterInfo').removeClass("problem");
+    }
+    else{
+        $('#correctRegisterInfo').removeClass("success");
+        $('#correctRegisterInfo').addClass("problem");
+    }
+}
+
 $(document).ready(function () {
     $("#NewPassword").on('keyup', ValidatePassword)
     $("#RepeatedPassword").on('keyup', RepeatedPassword, ValidatePassword)
+    registerInfo();
 });
 
 
