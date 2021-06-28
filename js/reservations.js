@@ -76,4 +76,23 @@ $(document).ready(function () {
     clickOnCell();
     setBasicColor();
     setColorOnClick();
+    // date picker
+    $( '.datepicker' ).pickadate({
+        closeOnSelect: false
+    });
+    // time picker
+    $('.timepicker').pickatime({
+        closeOnSelect: false,
+        format: 'H:i',
+        min: [6,0],
+        max: [20,0],
+        interval: 90,
+        delete: [
+            [13,30],
+            [15,0],
+            [16,30],
+            [9,0]
+        ],
+        clear: ''
+    });
 });

@@ -7,11 +7,6 @@ require __DIR__ . '/vendor/autoload.php';
 $loader = new \Twig\Loader\FilesystemLoader('html');
 $twig = new \Twig\Environment($loader);
 
-
-$allowed_pages = ['main', 'announcements', 'donate', 'login', 'register', 'reservations'];
-$protected_pages = ['admin', 'admin_announcements', 'admin_reservations', 'add_article', 'add_reservation', 'edit_article'];
-
-
 include("config.inc.php");
 
 if (isset($config) && is_array($config)) {
@@ -28,7 +23,9 @@ if (isset($config) && is_array($config)) {
     exit("Nie znaleziono konfiguracji bazy danych.");
 }
 
+$allowed_pages = ['main', 'announcements', 'donate', 'login', 'register', 'reservations', 'placeReservation'];
 
+$protected_pages = ['admin', 'admin_announcements', 'admin_reservations', 'add_article', 'add_reservation', 'edit_article'];
 
 if( isset($_GET['page']) && in_array($_GET['page'], $allowed_pages) ){
     $page = $_GET['page'];

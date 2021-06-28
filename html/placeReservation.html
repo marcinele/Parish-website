@@ -1,0 +1,76 @@
+{% extends "index.html.twig" %}
+
+{% block style %}
+<link rel="stylesheet" type="text/css" href="/css/reservations.css">
+
+{% endblock %}
+
+{% block head %}
+<script type="text/javascript" src="/js/reservations.js"></script>
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid p-0">
+    <div class="row-fluid">
+        <div class="span" id="background_span">
+            <div class="bg-image main-text">
+                <h1 class="mb-3 h2">Rezerwacje miejsc</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+<body class="mainContainer">
+<div class="info" style="height: 50px; opacity: 100%">
+</div>
+<a name="places">
+<div id="places" class="container py-5 mainInput">
+    <div class="row" id="tblMain">
+        <div class="col-sm-2">
+            <div class="col-sm-12">
+                <table class="column longColumn" id="column1"></table>
+            </div>
+        </div>
+        <div class="col-sm-8">
+            <div class="col-sm-12 altar"> Ołtarz</div>
+        </div>
+        <div class="col-sm-2">
+            <div class="col-sm-12">
+                <table class="column longColumn" id="column2"></table>
+            </div>
+        </div>
+        <div class="col-sm-2">
+            <div class="col-sm-12">
+                <table class="column shortColumn" id="column3"></table>
+            </div>
+        </div>
+        <div class="col-sm-2">
+            <div class="col-sm-12">
+                <table class="column shortColumn" id="column4"></table>
+            </div>
+        </div>
+        <div class="col-sm-2">
+            <div class="col-sm-12">
+                <table class="column shortColumn" id="column5"></table>
+            </div>
+        </div>
+        <div class="col-sm-2">
+            <div class="col-sm-12">
+                <table class="column shortColumn" id="column6"></table>
+            </div>
+        </div>
+        <div class="col-sm-2">
+            <div class="col-sm-12">
+                <table class="column shortColumn" id="column7"></table>
+            </div>
+        </div>
+        <div class="col-sm-2">
+            <div class="col-sm-12">
+                <table class="column shortColumn" id="column8"></table>
+            </div>
+        </div>
+    </div>
+</div>
+</a>
+</body>
+{% endblock %}
