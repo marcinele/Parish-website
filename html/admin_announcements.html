@@ -5,5 +5,37 @@
 {% endblock %}
 
 {% block content %}
-
+	<div class="card mb-3" id="announcemets_list">
+		 <div class="card-header">
+        	Ogłoszenia
+    	</div>
+    	<div class="card-body">
+    		<table class="table table-striped mt-3">
+          		<thead>
+            		<tr id="wiersz-naglowka">
+              			<th scope="col">Tytuł</th>
+              			<th scope="col"></th>
+              			<th scope="col"></th>
+            		</tr>
+          		</thead>
+          	<tbody>
+          		{% for row in rows %}
+          			<tr>
+                  		<td><a href="/articles_list/show/{{ row.announcement_id }}">{{ row.title }}</td>
+                  		<td>
+                  			<a href="/edit_article/id/{{ row.announcement_id }}">
+                  				<button>Edytuj</button>
+                  			</a>
+                  		</td>
+                  		<td>
+                  			<a href="/delete_article/id/{{ row.announcement_id }}">
+                  				<button>Usuń</button>
+                  			</a>
+                  		</td>
+                  	</tr>
+          		{% endfor %}
+          	</tbody>
+          	</table>
+    	</div>
+	</div>
 {% endblock %}

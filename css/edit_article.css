@@ -47,16 +47,22 @@ ul li a{
     color: #555;
 }
 
-#announcemets_list {
+#editor{
     margin-top: 50px;
-    color: whitesmoke !important;
-    background: #323c4b;
 }
 
-th {
-    color: whitesmoke !important;
+.title_text {
+    width: 35vw;
 }
 
-a {
-    color: whitesmoke !important;
+.art-editor {
+    height: 75vh;
+}
+
+.saved {
+    color:  green !important;
+}
+
+.not_saved {
+    color:  red !important;
 }

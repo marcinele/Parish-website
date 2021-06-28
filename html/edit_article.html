@@ -1,0 +1,30 @@
+{% extends "admin.html" %}
+
+{% block head %}
+	<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+    <script>tinymce.init({selector:'textarea.art-editor'});</script>
+{% endblock %}
+
+{% block style %}
+	<link rel="stylesheet" type="text/css" href="/css/edit_article.css">
+{% endblock %}
+
+{% block content %}
+	<div id="editor">
+		<form action="/edit_article/id/{{ article.announcement_id }}" method="POST">
+			<input class="title_text" type="text" name="title" placeholder="Tytuł" value="{{ article.title }}">
+			<br>
+			<input class="title_text" type="text" name="subtitle" placeholder="Podtytuł" value="{{ article.subtitle }}">
+			<br>
+			<textarea name="content" class="art-editor">{{ article.content }}</textarea>
+			<br>
+			<input type="submit" value="Zapisz">
+		</form>
+	</div>
+
+	{% if saved and post %}
+		<h2 class="saved"> Zapisano zmiany! </h2>
+	{% elseif not saved and post %}
+		<h2 class="not_saved"> Nie udało się zapisać zmian! </h2>
+	{% endif %}
+{% endblock %}
