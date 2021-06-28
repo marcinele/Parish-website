@@ -2,6 +2,31 @@
 
 {% block style %}
 <link rel="stylesheet" type="text/css" href="/css/reservations.css">
+
+<!--        ------------------- !-->
+
+<!-- Default Theme (Core) -->
+<!-- Classic Theme (Core) -->
+<link rel="stylesheet" href="../DatePicker/lib/themes/classic.css">
+<!-- Classic Theme (Date Picker) -->
+<link rel="stylesheet" href="../DatePicker/lib/themes/classic.date.css">
+<!-- Classic Theme (Time Picker If Needed)-->
+<link rel="stylesheet" href="../DatePicker/lib/themes/classic.time.css">
+
+
+<!-- Core -->
+<script src="../DatePicker/lib/picker.js"></script>
+<!-- Date Picker -->
+<script src="../DatePicker/lib/picker.date.js"></script>
+<!-- Language -->
+<script src="../DatePicker/lib/translations/pl_PL.js"></script>
+<!-- Required For Legacy Browsers (IE 8-) -->
+<script src="../DatePicker/lib/legacy.js"></script>
+<!-- Time Picker -->
+<script src="../DatePicker/lib/picker.time.js"></script>
+
+<!--        ------------------- !-->
+
 {% endblock %}
 
 {% block head %}
@@ -9,6 +34,7 @@
 {% endblock %}
 
 {% block content %}
+<head>
 <div class="container-fluid p-0">
     <div class="row-fluid">
         <div class="span" id="background_span">
@@ -18,35 +44,37 @@
         </div>
     </div>
 </div>
-<div class="container py-5 border border-secondary">
-    <div class="row" id="tblMain">
-        <div class="col-sm-2">
-            <div class="col-sm-12"><table class="column longColumn" id="column1"> </table></div>
-        </div>
-        <div class="col-sm-8">
-            <div class="col-sm-12 altar"> Ołtarz </div>
-        </div>
-        <div class="col-sm-2">
-            <div class="col-sm-12"><table class="column longColumn" id="column2"> </table></div>
-        </div>
-        <div class="col-sm-2">
-            <div class="col-sm-12"><table class="column shortColumn" id="column3"> </table></div>
-        </div>
-        <div class="col-sm-2">
-            <div class="col-sm-12"><table class="column shortColumn" id="column4"> </table></div>
-        </div>
-        <div class="col-sm-2">
-            <div class="col-sm-12"><table class="column shortColumn" id="column5"> </table></div>
-        </div>
-        <div class="col-sm-2">
-            <div class="col-sm-12"><table class="column shortColumn" id="column6"> </table></div>
-        </div>
-        <div class="col-sm-2">
-            <div class="col-sm-12"><table class="column shortColumn" id="column7"> </table></div>
-        </div>
-        <div class="col-sm-2">
-            <div class="col-sm-12"><table class="column shortColumn" id="column8"> </table></div>
-        </div>
-    </div>
+</head>
+<div class="info" style="height: 50px; opacity: 100%">
 </div>
+<body class="mainContainer">
+<div class="container mainInput">
+    <form method="POST" action="/placeReservation">
+        <div class="info" style="height: 100px;"> Wybierz datę oraz godzinę mszy na którą chciałbyś zarezerwować
+            miejsce.
+        </div>
+        <div class="container-lg border border-secondary" style="height: 415px;">
+            <div class="row">
+                <div class="col-md-6 container">
+                    Wybierz datę.
+                </div>
+                <div class="col-md-6 container">
+                    Wybierz godzinę.
+                </div> <br>
+                <div class="col-md-6 container">
+                    <input id="exampleDate" class="datepicker" name="date" type="text" value="27 June, 2021"
+                           data-value="2021-06-21"/>
+                </div>
+                <div class="col-md-6 container">
+                    <input id="exampleTime" class="timepicker" type="time" name="time" value="2:30 AM" data-value="0:00"/>
+                </div>
+            </div>
+        </div>
+        <button id="submitButton" type="submit" name="dateAndTimeSubmit">
+            Przejdź dalej <i class="fa fa-arrow-right" aria-hidden="true"></i>
+        </button>
+        <div style="height: 10px;"></div>
+    </form>
+</div>
+</body>
 {% endblock %}

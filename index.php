@@ -13,7 +13,7 @@ echo $twig->render('index.html.twig', [
     'session' => $_SESSION,
     'get' => $_GET]);
 
-$allowed_pages = ['main', 'announcements', 'donate', 'login', 'register', 'reservations'];
+$allowed_pages = ['main', 'announcements', 'donate', 'login', 'register', 'reservations', 'placeReservation'];
 
 if( isset($_GET['page']) && in_array($_GET['page'], $allowed_pages) ){
     $page = $_GET['page'];
