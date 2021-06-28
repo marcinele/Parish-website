@@ -7,6 +7,8 @@
 
 {% block head %}
 <script type="text/javascript" src="/js/reservations.js"></script>
+<!-- or directly from unpkg -->
+<script src="https://unpkg.com/swup@latest/dist/swup.min.js"></script>
 {% endblock %}
 
 {% block content %}
@@ -20,57 +22,68 @@
     </div>
 </div>
 
-<body class="mainContainer">
 <div class="info" style="height: 50px; opacity: 100%">
 </div>
-<a name="places">
-<div id="places" class="container py-5 mainInput">
-    <div class="row" id="tblMain">
-        <div class="col-sm-2">
-            <div class="col-sm-12">
-                <table class="column longColumn" id="column1"></table>
+<body class="mainContainer">
+<div class="container mainInput">
+    <a name="places">
+        <form method="POST" action="/placeReservation">
+            <div class="info" style="height: 100px;">
+                Wybierz miejsce (bądź miejsca), które chcesz zarezerwować.
             </div>
-        </div>
-        <div class="col-sm-8">
-            <div class="col-sm-12 altar"> Ołtarz</div>
-        </div>
-        <div class="col-sm-2">
-            <div class="col-sm-12">
-                <table class="column longColumn" id="column2"></table>
+            <div id="places" class="container py-5 border border-secondary" style="height: 415px;">
+                <div class="row" id="tblMain">
+                    <div class="col-sm-2">
+                        <div class="col-sm-12">
+                            <table class="column longColumn" id="column1"></table>
+                        </div>
+                    </div>
+                    <div class="col-sm-8">
+                        <div class="col-sm-12 altar"> Ołtarz</div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="col-sm-12">
+                            <table class="column longColumn" id="column2"></table>
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="col-sm-12">
+                            <table class="column shortColumn" id="column3"></table>
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="col-sm-12">
+                            <table class="column shortColumn" id="column4"></table>
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="col-sm-12">
+                            <table class="column shortColumn" id="column5"></table>
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="col-sm-12">
+                            <table class="column shortColumn" id="column6"></table>
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="col-sm-12">
+                            <table class="column shortColumn" id="column7"></table>
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="col-sm-12">
+                            <table class="column shortColumn" id="column8"></table>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="col-sm-2">
-            <div class="col-sm-12">
-                <table class="column shortColumn" id="column3"></table>
-            </div>
-        </div>
-        <div class="col-sm-2">
-            <div class="col-sm-12">
-                <table class="column shortColumn" id="column4"></table>
-            </div>
-        </div>
-        <div class="col-sm-2">
-            <div class="col-sm-12">
-                <table class="column shortColumn" id="column5"></table>
-            </div>
-        </div>
-        <div class="col-sm-2">
-            <div class="col-sm-12">
-                <table class="column shortColumn" id="column6"></table>
-            </div>
-        </div>
-        <div class="col-sm-2">
-            <div class="col-sm-12">
-                <table class="column shortColumn" id="column7"></table>
-            </div>
-        </div>
-        <div class="col-sm-2">
-            <div class="col-sm-12">
-                <table class="column shortColumn" id="column8"></table>
-            </div>
-        </div>
-    </div>
+            <button id="submitButton" type="submit" name="dateAndTimeSubmit">
+                Przejdź dalej <i class="fa fa-arrow-right" aria-hidden="true"></i>
+            </button>
+            <div style="height: 10px;"></div>
+        </form>
+    </a>
 </div>
-</a>
 </body>
 {% endblock %}

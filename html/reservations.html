@@ -31,6 +31,8 @@
 
 {% block head %}
 <script type="text/javascript" src="/js/reservations.js"></script>
+<!-- or directly from unpkg -->
+<script src="https://unpkg.com/swup@latest/dist/swup.min.js"></script>
 {% endblock %}
 
 {% block content %}
@@ -49,7 +51,7 @@
 </div>
 <body class="mainContainer">
 <div class="container mainInput">
-    <form method="POST" action="/placeReservation">
+    <form method="POST" action="/placeReservation#places">
         <div class="info" style="height: 100px;"> Wybierz datę oraz godzinę mszy na którą chciałbyś zarezerwować
             miejsce.
         </div>
