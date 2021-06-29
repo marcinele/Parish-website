@@ -249,3 +249,12 @@ body{
         transform: translateY(0);
     }
 }
+
+table#columnx {
+    table-layout: fixed ;
+    width: 20% ;
+    cursor: default;
+}
+td#columnx {
+    width: 5% ;
+}
