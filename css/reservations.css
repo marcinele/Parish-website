@@ -162,13 +162,22 @@ td.selected {
 
 td.taken {
     background-color: red;
+    cursor: default;
 }
 
 td.forbidden {
     background-color: grey;
 }
 
+td.forbiddenBySomeoneElse {
+    background-color: grey;
+}
+
 td.selectedButPreviouslyForbidden{
+    background-color: green;
+}
+
+td.selectedButPreviouslyForbiddenBySomeoneElse{
     background-color: green;
 }
 

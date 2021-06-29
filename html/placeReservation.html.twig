@@ -34,9 +34,9 @@
         </div>
     {% else %}
         <body class="mainContainer">
-        <div class="container mainInput">
-            <a name="places">
-                <form method="POST" action="/placeReservation">
+        <form method="POST" action={{ link }}>
+            <div class="container mainInput">
+                <a name="places">
                     <div class="info" style="height: 100px;  font-size: 30px;">
                         Wybierz miejsce (bądź miejsca), które chcesz zarezerwować.
                     </div>
@@ -115,14 +115,14 @@
                             </div>
                         </div>
                     </div>
-                    <button id="submitButton" type="submit" name="dateAndTimeSubmit">
-                        Przejdź dalej <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                    <button id="submitButton" type="submit">
+                        Zarezerwuj! <i class="fa fa-arrow-right" aria-hidden="true"></i>
                     </button>
-                    <div id="info">Popraw wprowadzone dane.</div>
+                    <div id="correctRegisterInfo">{{ info }}</div>
                     <div style="height: 10px;"></div>
-                </form>
-            </a>
-        </div>
+                </a>
+            </div>
+        </form>
         </body>
     {% endif %}
 {% endblock %}

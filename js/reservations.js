@@ -99,7 +99,7 @@ $(document).ready(function () {
             success: function (response) {
                 id = response;
                 id = id.slice(0, -1);
-                let link = "/index.php?page=placeReservation&id=" + id + "#places";
+                let link = "/placeReservation/id/" + id;
                 $('#dataAndTimeForm').attr('action', link);
             }
         });
