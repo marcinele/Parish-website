@@ -49,7 +49,6 @@ function ValidatePassword() {
         document.getElementById("submitButton").disabled = true;
         document.getElementById("submitButton").style.color = 'red';
         document.getElementById("info").style.visibility = "visible";
-
     }
     console.log(document.getElementById("submitButton".disable))
 }
