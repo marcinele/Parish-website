@@ -250,11 +250,13 @@ body{
     }
 }
 
+/*
 table#columnx {
-    table-layout: fixed ;
-    width: 20% ;
+    max-width: 100%;
+!*    table-layout: auto !important;*!
     cursor: default;
 }
 td#columnx {
-    width: 5% ;
+    table-layout: auto !important;
 }
+*/

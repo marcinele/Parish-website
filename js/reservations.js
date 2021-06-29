@@ -20,11 +20,14 @@ function createTable(columns, rows, columnName) {
 function clickOnCell() {
     $(function () {
         $('.column td').click(function () {
-            var bigColumnName = $(this).closest('table').attr('id');
-            var smallColumnId = $(this).index() + 1;
-            var rowId = $(this).closest('tr').index() + 1;
-            var classList = $(this).attr("class");
-            alert("Big column name: " + bigColumnName + "\nSmall column id: " + smallColumnId + "\nRow column id: " + rowId + "\nClass name: " + classList)
+            let elementId = $(this).parent().parent().attr('id');
+            if(elementId!== "columnx") {
+                var bigColumnName = $(this).closest('table').attr('id');
+                var smallColumnId = $(this).index() + 1;
+                var rowId = $(this).closest('tr').index() + 1;
+                var classList = $(this).attr("class");
+                alert("Big column name: " + bigColumnName + "\nSmall column id: " + smallColumnId + "\nRow column id: " + rowId + "\nClass name: " + classList)
+            }
         });
     });
 }
@@ -42,11 +45,26 @@ function setBasicColor() {
     });
 }
 
+function formatExampleCells() {
+    $(function () {
+        let table = document.getElementById('columnx');
+        table.rows[0].cells[0].classList.add('unselected');
+        table.rows[1].cells[0].classList.add('selected');
+        table.rows[2].cells[0].classList.add('taken');
+        table.rows[3].cells[0].classList.add('forbidden');
+        table.rows[0].cells[1].innerText = "Wolne";
+        table.rows[1].cells[1].innerText = "Wybrane przez Ciebie";
+        table.rows[2].cells[1].innerText = "Zajęte";
+        table.rows[3].cells[1].innerText = "Niedostępne z powodu obostrzeń.";
+    });
+}
+
 function setColorOnClick() {
     $(function () {
-        $('.columnMain td').click(function () {
+        $('.column td').click(function () {
             let classList = $(this).attr("class");
-            if(classList!== "mikroColumn") {
+            let elementId = $(this).parent().parent().attr('id');
+            if(elementId!== "columnx") {
                 if (classList === "unselected") {
                     $(this).removeClass("unselected");
                     $(this).addClass("selected");
@@ -151,10 +169,11 @@ function validateInput(){
 $(document).ready(function () {
     createTable(5, 4, 'longColumn');
     createTable(5, 9, 'shortColumn');
-    createTable(1, 4, 'mikroColumn');
+    createTable(2, 4, 'mikroColumn');
     clickOnCell();
     setBasicColor();
     setColorOnClick();
+    formatExampleCells();
     $('.datepicker').pickadate({
         closeOnSelect: false,
         format: 'yyyy-mm-dd',
