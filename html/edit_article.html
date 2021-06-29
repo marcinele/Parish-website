@@ -11,20 +11,54 @@
 
 {% block content %}
 	<div id="editor">
-		<form action="/edit_article/id/{{ article.announcement_id }}" method="POST">
-			<input class="title_text" type="text" name="title" placeholder="Tytuł" value="{{ article.title }}">
-			<br>
-			<input class="title_text" type="text" name="subtitle" placeholder="Podtytuł" value="{{ article.subtitle }}">
-			<br>
+		{% if new == 1 %}
+			<form action="/edit_article/new" method="POST" enctype="multipart/form-data">
+		{% else %}
+			<form action="/edit_article/id/{{ article.announcement_id }}" method="POST" enctype="multipart/form-data">
+		{% endif %}
+			<div class="input-group mb-3">
+				<div class="input-group-prepend">
+				    <span class="input-group-text" id="basic-addon1">Tytuł</span>
+				</div>
+				<input type="text" class="form-control" placeholder="Tytuł" aria-label="Tytuł" aria-describedby="basic-addon1" name="title" value="{{ article.title }}">
+			</div>
+			<div class="input-group mb-3">
+				<div class="input-group-prepend">
+				    <span class="input-group-text" id="basic-addon1">Podtytuł</span>
+				</div>
+				<input type="text" class="form-control" placeholder="Podtytuł" aria-label="Tytuł" aria-describedby="basic-addon1" name="subtitle" value="{{ article.subtitle }}">
+			</div>
 			<textarea name="content" class="art-editor">{{ article.content }}</textarea>
 			<br>
-			<input type="submit" value="Zapisz">
+			<p id="choose_img">Wybierz obrazek: </p>
+  			<input type="file" name="fileToUpload" id="fileToUpload">
+  			<br>
+			<input class="submit_input" type="submit" value="Zapisz">
 		</form>
 	</div>
 
-	{% if saved and post %}
-		<h2 class="saved"> Zapisano zmiany! </h2>
+	{% if saved and post and new == 2 and imgValidation > 0 %}
+		<div class="alert alert-success" role="alert">
+		  Dodano artykuł!
+		</div>
+	{% elseif saved and post and new == 2 and imgValidation == 0 %}
+		<div class="alert alert-success" role="alert">
+		 	Dodano artykuł!
+		</div>
+		<div class="alert alert-info" role="alert">
+			Załadowano domyślny obrazek. Obrazek nie został wybrany lub ma nieprawidłowy format (poprawne: .jpg, .png, .jpeg, .gif).
+		</div>
+	{% elseif not saved and post and new == 1 %}
+		<div class="alert alert-danger" role="alert">
+		  Nie udało się dodać artykułu!
+		</div>
+	{% elseif saved and post %}
+		<div class="alert alert-success" role="alert">
+		  Zapisano zmiany!
+		</div>
 	{% elseif not saved and post %}
-		<h2 class="not_saved"> Nie udało się zapisać zmian! </h2>
+		<div class="alert alert-danger" role="alert">
+		  Nie udało się zapisać zmian!
+		</div>
 	{% endif %}
 {% endblock %}

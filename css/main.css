@@ -1,6 +1,8 @@
 
 body {
     background-color: #323c4b;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
 }
 
 /* Change navbar styling on small viewports */

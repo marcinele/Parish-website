@@ -17,6 +17,7 @@ if (isset($_POST['loginSubmit'])) {
             $_SESSION['id'] = $user['id'];
             $_SESSION['email'] = $user['email'];
             $_SESSION['username'] = $user['username'];
+            $_SESSION['permissions'] = $user['permissions'];
             echo "<script> window.location.href = '/main' </script>";
         } else {
             echo "<script> alert('Podano niepoprawne hasło.') </script>";

@@ -47,5 +47,7 @@ if( isset($_GET['page']) && in_array($_GET['page'], $allowed_pages) ){
 } if (isset($_POST['logoutSubmit'])) {
     unset($_SESSION['id']);
     unset($_SESSION['email']);
+    unset($_SESSION['username']);
+    unset($_SESSION['permissions']);
     echo "<script> window.location.href = '/main' </script>";
 }

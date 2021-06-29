@@ -56,6 +56,11 @@
                 </ul>
                 <ul class="navbar-nav ml-auto">
                     {% if(session.id is defined and session.email is defined) %}
+                        {% if session.permissions == 1 %}
+                            <li class="nav-item">
+                                <a class="nav-link" href="/admin">Admin Panel</a>
+                            </li>
+                        {% endif %}
                         <li class="nav-item">
                             <a class="nav-link" href="/yourAccount">{{ session.username }}</a>
                         </li>

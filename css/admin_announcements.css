@@ -14,6 +14,9 @@ body {
     }
 }
 
+.fluid {
+    height: 50px;
+}
 
 .register_login{
     background-size: cover;
@@ -25,12 +28,6 @@ body {
     z-index:-1;
     filter: brightness(0.4);
 }
-
-ul li a{
-    transition: all ease 0.5s;
-}
-
-
 
 
 *:focus {
@@ -48,7 +45,6 @@ ul li a{
 }
 
 #announcemets_list {
-    margin-top: 50px;
     color: whitesmoke !important;
     background: #323c4b;
 }
@@ -59,4 +55,19 @@ th {
 
 a {
     color: whitesmoke !important;
+}
+
+
+p {
+    color: whitesmoke !important;
+}
+
+.alert {
+    width: max-content;
+    margin: 20px;
+}
+
+.add_new {
+    margin-top: 25px;
+    margin-left: 20px;
 }

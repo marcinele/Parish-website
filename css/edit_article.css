@@ -48,21 +48,41 @@ ul li a{
 }
 
 #editor{
-    margin-top: 50px;
+    margin-top: 70px;
+    margin-left: 1vw;
+    margin-right: 1vw;
 }
 
 .title_text {
     width: 35vw;
+    margin-top: 1px;
+    margin-bottom: 1px;
 }
 
 .art-editor {
-    height: 75vh;
+    height: 65vh;
 }
 
-.saved {
-    color:  green !important;
+.alert {
+    width: max-content;
+    margin: 1vw;
 }
 
-.not_saved {
-    color:  red !important;
+h4 {
+    color: whitesmoke !important;
+    margin: 0;
+}
+
+
+#choose_img {
+    color: whitesmoke !important;
+    margin: 0;
+}
+
+#fileToUpload {
+    color: whitesmoke !important;
+}
+
+.submit_input {
+    margin-top: 1vw;
 }
