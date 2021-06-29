@@ -16,18 +16,6 @@ if (isset($_POST['chosenDate'])) {
     exit;
 }
 
-/*if (isset($_POST['dateAndTimeSubmit'])) {
-    $date = $_POST['date'];
-    $hour = $_POST['time'];
-    $stmt = $dbh->prepare("SELECT * FROM masses WHERE date = :date AND hour = :hour");
-    $stmt->execute([':date' => $date, ':hour' => $hour]);
-    $picked_mass = $stmt->fetch(PDO::FETCH_ASSOC);
-    $id = $picked_mass['id'];
-    echo '<script>';
-    echo 'console.log(' . json_encode($id) . ')';
-    echo '</script>';
-}*/
-
 if (isset($_POST['actualDate']) && isset($_POST['actualTime'])) {
     $date = $_POST['actualDate'];
     $hour = $_POST['actualTime'];
@@ -44,7 +32,7 @@ if (isset($_GET['id'])) {
     echo"<script> console.log($id) </script>";
 }
 
-echo $twig->render('reservations.html', [
+echo $twig->render('reservations.html.twig', [
     'post' => $_POST,
     'session' => $_SESSION,
     'get' => $_GET]);

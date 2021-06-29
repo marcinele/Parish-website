@@ -1,0 +1,128 @@
+{% extends "index.html.twig" %}
+
+{% block style %}
+    <link rel="stylesheet" type="text/css" href="/css/reservations.css">
+
+{% endblock %}
+
+{% block head %}
+    <script type="text/javascript" src="/js/placeReservation.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+    <!-- or directly from unpkg -->
+    <script src="https://unpkg.com/swup@latest/dist/swup.min.js"></script>
+{% endblock %}
+
+{% block content %}
+    <div class="container-fluid p-0">
+        <div class="row-fluid">
+            <div class="span" id="background_span">
+                <div class="bg-image main-text">
+                    <h1 class="mb-3 h2">Rezerwacje miejsc</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="info" style="height: 50px; opacity: 100%">
+    </div>
+    {% if(session.id is not defined and session.email is not defined) %}
+        <div class="container-lg" style="height: 215px;">
+            <div class="didntLogin" style="height: 200px; font-size: 30px;">
+                <a href="/login">Zaloguj się </a>, by zarezerwować mszę.
+            </div>
+        </div>
+    {% else %}
+        <body class="mainContainer">
+        <div class="container mainInput">
+            <a name="places">
+                <form method="POST" action="/placeReservation">
+                    <div class="info" style="height: 100px;  font-size: 30px;">
+                        Wybierz miejsce (bądź miejsca), które chcesz zarezerwować.
+                    </div>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <table class="column mikroColumn" id="columnx"></table>
+                            </div>
+                            <div class="col-sm-8 border border-secondary">
+                                <input type="checkbox" id="enable" name="enable" value="enable">
+                                <label for="enable">Odblokuj niedostępne miejsce</label>
+                                <br> Zaznacz jeżeli osoba dla której wybierasz aktualnie miejsce jest ozdrowieńcem
+                                lub przyjęła dwukrotnie szczepionkę. Dzięki temu będziesz mógł / mogła wybrać
+                                niedostępne miejsca.
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <a>Data mszy: {{ date }}</a>
+                            </div>
+                            <div class="col-sm-4">
+                                <a>Godzina mszy: {{ hour }}</a>
+                            </div>
+                            <div class="col-sm-4">
+                                <a>{{ author }}</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="places" class="container py-5 border border-secondary" style="height: 415px;">
+                        <div class="row" id="tblMain">
+                            <div class="col-sm-2">
+                                <div class="col-sm-12">
+                                    <table class="columnMain longColumn " id="column1"></table>
+                                </div>
+                            </div>
+                            <div class="col-sm-8">
+                                <div class="col-sm-12 altar"> Ołtarz</div>
+                            </div>
+                            <div class="col-sm-2">
+                                <div class="col-sm-12">
+                                    <table class="columnMain longColumn" id="column2"></table>
+                                </div>
+                            </div>
+                            <div class="col-sm-2">
+                                <div class="col-sm-12">
+                                    <table class="columnMain shortColumn" id="column3"></table>
+                                </div>
+                            </div>
+                            <div class="col-sm-2">
+                                <div class="col-sm-12">
+                                    <table class="columnMain shortColumn" id="column4"></table>
+                                </div>
+                            </div>
+                            <div class="col-sm-2">
+                                <div class="col-sm-12">
+                                    <table class="columnMain shortColumn" id="column5"></table>
+                                </div>
+                            </div>
+                            <div class="col-sm-2">
+                                <div class="col-sm-12">
+                                    <table class="columnMain shortColumn" id="column6"></table>
+                                </div>
+                            </div>
+                            <div class="col-sm-2">
+                                <div class="col-sm-12">
+                                    <table class="columnMain shortColumn" id="column7"></table>
+                                </div>
+                            </div>
+                            <div class="col-sm-2">
+                                <div class="col-sm-12">
+                                    <table class="columnMain shortColumn" id="column8"></table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button id="submitButton" type="submit" name="dateAndTimeSubmit">
+                        Przejdź dalej <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                    </button>
+                    <div id="info">Popraw wprowadzone dane.</div>
+                    <div style="height: 10px;"></div>
+                </form>
+            </a>
+        </div>
+        </body>
+    {% endif %}
+{% endblock %}

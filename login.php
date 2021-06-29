@@ -5,9 +5,6 @@ echo $twig->render('login.html', [
     'session' => $_SESSION,
     'get' => $_GET]);
 
-session_start();
-
-
 if (isset($_POST['loginSubmit'])) {
     $stmt = $dbh->prepare("SELECT * FROM users WHERE email = :email");
     $stmt->execute([':email' => $_POST['loginEmail']]);
