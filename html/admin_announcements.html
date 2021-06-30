@@ -1,0 +1,69 @@
+{% extends "admin.html" %}
+
+{% block style %}
+	<link rel="stylesheet" type="text/css" href="/css/admin_announcements.css">
+{% endblock %}
+
+{% block content %}
+	<div class="card mb-3" id="announcemets_list">
+		<div class="fluid">
+		</div>
+		 <div class="card-header">
+        	Ogłoszenia
+    	</div>
+    	<a href="/edit_article/new">
+	        <button class="add_new btn btn-light">Dodaj nowe ogłoszenie</button>
+	    </a>
+    	<div class="card-body">
+    		<table class="table table-striped mt-3">
+          		<thead>
+            		<tr id="wiersz-naglowka">
+              			<th scope="col">Tytuł</th>
+              			<th scope="col">Dodano</th>
+              			<th scope="col">Edytowano</th>
+              			<th scope="col"></th>
+              			<th scope="col"></th>
+            		</tr>
+          		</thead>
+          	<tbody>
+          		{% if selectStatus %}
+	          		{% for row in rows %}
+	          			<tr>
+	                  		<td><a href="/announcement/show/{{ row.announcement_id }}">{{ row.title }}</td>
+	                  		<td>
+	                  			<p> {{ row.created }} </p>
+	                  		</td>
+	                  		<td>
+	                  			<p> {{ row.updated }} </p>
+	                  		</td>
+	                  		<td>
+	                  			<a href="/edit_article/id/{{ row.announcement_id }}">
+	                  				<button class="btn btn-light">Edytuj</button>
+	                  			</a>
+	                  		</td>
+	                  		<td>
+	                  			<a href="/admin_announcements/delete/{{ row.announcement_id }}">
+	                  				<button class="btn btn-light">Usuń</button>
+	                  			</a>
+	                  		</td>
+	                  	</tr>
+	          		{% endfor %}
+	          	{% else %}
+		          	<div class="alert alert-danger" role="alert">
+					  Nie udało się pobrać danych z bazy.
+					</div>
+	          	{% endif %}
+          	</tbody>
+          	</table>
+    	</div>
+	</div>
+	{% if isDelete and deleted %}
+		<div class="alert alert-success" role="alert">
+		  Udało się usunąć ogłoszenie.
+		</div>
+	{% elseif isDelete and not deleted %}
+		<div class="alert alert-danger" role="alert">
+		  Wystąpił błąd podczas usuwania.
+		</div>
+	{% endif %}
+{% endblock %}

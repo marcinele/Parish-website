@@ -1,0 +1,91 @@
+body {
+    background-color: #323c4b;
+    font-family: 'Montserrat', sans-serif;
+    transition: all 0.4s;
+}
+
+/* Change navbar styling on small viewports */
+@media (max-width: 991.98px) {
+    .navbar {
+        background: #fff;
+    }
+
+    .navbar .navbar-brand, .navbar .nav-link {
+        color: #555;
+    }
+}
+
+.card {
+    background-color: #323c4b;
+    position: relative;
+    border: none;
+}
+
+
+
+.content{
+    margin: 10px;
+    margin-left: 10vw;
+    margin-right: 10vw;
+    color: white !important;
+}
+
+.card-title {
+    font-size: 40px;
+}
+
+.card-subtitle {
+    font-size: 25px;
+}
+
+
+#title{
+    padding-top: 30vh;
+}
+
+.card-img {
+    filter: brightness(0.6);
+    max-width: 100%;
+    height: 70vh;
+    object-fit: cover;
+}
+
+.alert {
+    width: max-content;
+    margin: 20px;
+}
+
+.main-text {
+    text-align: center;
+    padding-top: 20%;
+    filter:  brightness(1.0);
+    color: whitesmoke !important;
+}
+
+.my-border {
+
+}
+
+.navbar.active {
+    background: #323c4b;
+    box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+.navbar.active .navbar-brand {
+    color: #555;
+}
+
+*:focus {
+    outline: 0 !important;
+}
+
+.gradient-overlay {
+    width: 100%;
+    height: 25vh;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background: rgb(50,60,75);
+    background: linear-gradient(0deg, rgba(50,60,75,1) 0%, rgba(255,255,255,0) 100%);
+}

@@ -1,0 +1,37 @@
+@import "register&login.css";
+
+body {
+    display:flex;
+    font-family: 'Montserrat', sans-serif;
+    background: url("/Images/choir_register.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.glyphicon-remove {
+    color: red;
+}
+
+.glyphicon-ok {
+    color: green;
+}
+
+#info {
+    color: red;
+}
+
+.reCaptchaDiv {
+    text-align: center;
+}
+
+.g-recaptcha {
+    display: inline-block;
+}
+
+.success{
+    color: green;
+}
+
+.problem{
+    color: red;
+}

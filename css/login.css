@@ -1,0 +1,10 @@
+@import "register&login.css";
+
+body {
+    display:flex;
+    font-family: 'Montserrat', sans-serif;
+    background: url("/Images/choir_login.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+

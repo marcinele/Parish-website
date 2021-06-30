@@ -1,0 +1,80 @@
+{% extends "admin.html" %}
+
+{% block style %}
+<link rel="stylesheet" type="text/css" href="/css/reservations.css">
+
+<!--        ------------------- !-->
+
+<!-- Default Theme (Core) -->
+<!-- Classic Theme (Core) -->
+<link rel="stylesheet" href="../DatePicker/lib/themes/classic.css">
+<!-- Classic Theme (Date Picker) -->
+<link rel="stylesheet" href="../DatePicker/lib/themes/classic.date.css">
+<!-- Classic Theme (Time Picker If Needed)-->
+<link rel="stylesheet" href="../DatePicker/lib/themes/classic.time.css">
+
+
+<!-- Core -->
+<script src="../DatePicker/lib/picker.js"></script>
+<!-- Date Picker -->
+<script src="../DatePicker/lib/picker.date.js"></script>
+<!-- Language -->
+<script src="../DatePicker/lib/translations/pl_PL.js"></script>
+<!-- Required For Legacy Browsers (IE 8-) -->
+<script src="../DatePicker/lib/legacy.js"></script>
+<!-- Time Picker -->
+<script src="../DatePicker/lib/picker.time.js"></script>
+
+<!--        ------------------- !-->
+
+{% endblock %}
+
+{% block head %}
+<script type="text/javascript" src="/js/admin_reservations.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+{% endblock %}
+
+{% block content %}
+<div class="info" style="height: 50px; opacity: 100%">
+</div>
+{% if(session.id is not defined and session.email is not defined) %}
+<div class="container-lg" style="height: 215px;">
+    <div class="didntLogin" style="height: 200px; font-size: 30px;">
+        <a href="/login">Zaloguj się </a>, by zarezerwować mszę.
+    </div>
+</div>
+{% else %}
+<body class="mainContainer">
+<div class="container mainInput">
+        <div class="info" style="height: 100px; font-size: 30px;">
+            Wybierz datę oraz godzinę mszy, którą chciałbyś dodać.
+        </div>
+        <div class="container-lg border border-secondary" style="height: 415px;">
+            <div id="correctRegisterInfo">{{ info }}</div>
+            <div class="row">
+                <div class="col-md-6 container">
+                    Wybierz datę.
+                </div>
+                <div class="col-md-6 container">
+                    Wybierz godzinę.
+                </div>
+                <br>
+                <div class="col-md-6 container">
+                    <input id="exampleDate" class="datepicker" name="date" type="text"/>
+                </div>
+                <div class="col-md-6 container">
+                    <input id="exampleTime" class="timepicker" type="time" name="time"
+                           value="Najpierw wybierz dzień."/>
+                </div>
+            </div>
+        </div>
+        <button class ="submitButton" id="submitButton" type="submit">
+            Dodaj <i class="fa fa-arrow-right" aria-hidden="true"></i>
+        </button>
+        <div id="info">Popraw wprowadzone dane.</div>
+        <div style="height: 10px;"></div>
+</div>
+</body>
+{% endif %}
+{% endblock %}
