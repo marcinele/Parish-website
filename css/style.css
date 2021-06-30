@@ -1,0 +1,64 @@
+body{
+    font-family: 'Montserrat', sans-serif;
+    animation: transitionIn 0.75s;
+}
+
+@keyframes transitionIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.navbar {
+    transition: all 0.4s;
+}
+
+.navbar .nav-link {
+    color: white;
+    font-size: 20;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link:focus {
+    text-decoration: none;
+}
+
+.navbar .navbar-brand {
+    color: #fff;
+}
+
+
+/* Change navbar styling on scroll */
+.navbar.active .nav-link {
+    color: white;
+}
+
+.navbar.active .nav-link:hover,
+.navbar.active .nav-link:focus {
+    text-decoration: none;
+}
+
+.logoutButton {
+    color: #fff;
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
+}
+
+ul li a{
+    transition: all ease 0.5s;
+}
+
+
+
+

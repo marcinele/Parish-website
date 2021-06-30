@@ -1,0 +1,224 @@
+body {
+    background-color: #574040;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Change navbar styling on small viewports */
+@media (max-width: 991.98px) {
+    .navbar {
+        background: #fff;
+    }
+
+    .navbar .navbar-brand, .navbar .nav-link {
+        color: #555;
+    }
+}
+
+.text-small {
+    font-size: 0.9rem !important;
+}
+
+.span{
+    transition: all 0.4s;
+}
+
+.bg-image {
+    min-height: 100vh;
+  font-size:40px;
+  text-align:center;
+  position: relative;
+  transition: all 0.4s;
+}
+
+.bg-image::before {
+        transition: all 0.4s;
+
+  content:"";
+  background: url("/Images/background_home.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width:100%;
+  min-height:100vh;
+  position: absolute;
+  left:0;
+  top:0;
+  z-index:-1;
+  filter: brightness(0.5);
+
+}
+
+.bg-image.scrolled {
+    min-height: 70vh;
+}
+
+.bg-image.scrolled::before{
+    transition: all 0.4s;
+    content:"";
+  background: url("/Images/background_home.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width:100%;
+  min-height:70vh;
+  position: absolute;
+  left:0;
+  top:0;
+  z-index:-1;
+  filter: brightness(0.4);
+}
+
+
+.announcements {
+   min-height: 100vh;
+  font-size:40px;
+  text-align:center;
+  position: relative;
+  transition: all 0.4s;
+}
+
+.announcements::before{
+    transition: all 0.4s;
+
+  content:"";
+  background: url("/Images/pulpit.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width:100%;
+  min-height:100vh;
+  position: absolute;
+  left:0;
+  top:0;
+  z-index:-1;
+  filter: brightness(0.5);
+}
+
+.announcements.scrolled {
+    min-height: 70vh;
+}
+
+.announcements.scrolled::before{
+    transition: all 0.4s;
+    content:"";
+  background: url("/Images/pulpit.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width:100%;
+  min-height:70vh;
+  position: absolute;
+  left:0;
+  top:0;
+  z-index:-1;
+  filter: brightness(0.4);
+}
+
+.register_login{
+    background-size: cover;
+    width:100%;
+    height:100%;
+    position: absolute;
+    left:0;
+    top:0;
+    z-index:-1;
+    filter: brightness(0.4);
+}
+
+.main-text {
+    text-align: center;
+    padding-top: 20%;
+    filter:  brightness(1.0);
+}
+
+
+.h2 {
+    color: whitesmoke !important;
+    font-size: 90px;
+}
+
+ul li a{
+    transition: all ease 0.5s;
+}
+
+.jumbotron {
+    background-color: #574040;
+    border-radius: 0px;
+}
+
+.article{
+    color: white !important;
+}
+
+*:focus {
+    outline: 0 !important;
+}
+
+.navbar.active {
+    background: #574040;
+    box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+.navbar.active .navbar-brand {
+    color: #555;
+}
+
+.article {
+    padding: 10px;
+    border: 2px solid #D1D1D6;
+    border-radius: 10px;
+    text-align: justify;
+}
+
+.article-title{
+    text-align: center;
+}
+
+.read-more-button{
+    padding: 10px;
+    border: 2px solid #D1D1D6;
+    border-radius: 10px;
+    transition: 0.4s;
+    opacity: 0.5;
+}
+
+.text-gray {
+    color: #aaa;
+}
+
+.list-group-item {
+    transition: transform .2s; /* Animation */
+}
+
+.list-group-item:hover {
+    transform: scale(1.05); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
+.list-group-item:after {
+    content: '';
+    display: block;
+    margin: auto;
+    height: 3px;
+    width: 0;
+    background: transparent;
+    transition: width .6s ease, background-color .6s ease;
+}
+.list-group-item:hover:after {
+    width: 100%;
+    background: #574040;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+a:hover {
+    color: black;
+    text-decoration: none;
+}
+
+.list-group-item{
+    width: 100%;
+}
+
+.list-group-item:hover {
+    box-shadow: 0 0 11px rgba(33,33,33,.2);
+}

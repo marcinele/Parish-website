@@ -1,0 +1,65 @@
+{% extends "index.html.twig" %}
+
+{% block style %}
+    <link rel="stylesheet" type="text/css" href="/css/register&login.css">
+    <link rel="stylesheet" type="text/css" href="/css/register.css">
+{% endblock %}
+
+
+{% block head %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/register.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+{% endblock %}
+
+{% block content %}
+<div class="span">
+    <div class="register_login">
+        <form method="POST" action="">
+            <div id="correctRegisterInfo">{{ info }}</div>
+            <p style="font-size:40px; font-weight: bold;">Zarejestruj się</p> <br>
+            <label>
+                <p class="label-txt">Nazwa użytkownika</p>
+                <input id="username" type="text" name="username" class="input" required>
+                <div class="line-box">
+                    <div class="line"></div>
+                </div>
+            </label> <br>
+            <label>
+                <p class="label-txt">Adres email</p>
+                <input type="text" name="email" class="input" required>
+                <div class="line-box">
+                    <div class="line"></div>
+                </div>
+            </label> <br>
+            <label>
+                <p class="label-txt">Hasło</p>
+                <input class="input" id="NewPassword" type="password" name="password" required>
+                <div class="line-box">
+                    <div class="line"></div>
+                </div>
+            </label> <br>
+            <label>
+                <p class="label-txt">Powtórz hasło</p>
+                <input type="password" id="RepeatedPassword" name="repeated_password" class="input" required>
+                <div class="line-box">
+                    <div class="line"></div>
+                </div>
+            </label> <br>
+            <div id="Length" class="glyphicon glyphicon-remove">Minimum 7 znaków</div>
+            <div id="UpperCase" class="glyphicon glyphicon-remove">Minimum jedna wielka litera</div>
+            <div id="LowerCase" class="glyphicon glyphicon-remove">Minimum jedna mała litera</div>
+            <div id="Numbers" class="glyphicon glyphicon-remove">Minimum jedna cyfra</div>
+            <div id="Symbols" class="glyphicon glyphicon-remove">Minimum jeden znak specjalny (!@#$%^&*)</div>
+            <div id="RepeatedPass" class="glyphicon glyphicon-remove">Obydwa hasła zgodne</div>
+            <div class="reCaptchaDiv">
+                <div class="g-recaptcha" data-callback="recaptchaCallback" data-expired-callback="expiredCallback"
+                     data-sitekey='6LcrreYUAAAAAGeERM9Etdv8wlh81RCSK0LXuwfX'></div> <br>
+            </div>
+            <button id="submitButton" type="submit" name="registerSubmit">Zarejestruj się</button>
+            <div id="info">Popraw wprowadzone dane.</div>
+        </form>
+    </div>
+</div>
+
+{% endblock %}
