@@ -47,6 +47,13 @@ if( isset($_GET['page']) && in_array($_GET['page'], $allowed_pages) ){
         print 'permission denied';
     }
     
+
+    $page = $_GET['page'];
+    if(file_exists($page . '.php')){
+        include($page . '.php');
+    } else {
+        print 'Dany plik nie istnieje!';
+    }
 } else{
     include('main.php');
 } if (isset($_POST['logoutSubmit'])) {
