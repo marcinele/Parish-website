@@ -37,7 +37,7 @@
 		</form>
 	</div>
 
-	{% if saved and post and new == 2 and imgValidation > 0 %}
+	{% if saved and post and new == 2 and imgValidation >= 1 %}
 		<div class="alert alert-success" role="alert">
 		  Dodano artykuł!
 		</div>
@@ -46,15 +46,22 @@
 		 	Dodano artykuł!
 		</div>
 		<div class="alert alert-info" role="alert">
-			Załadowano domyślny obrazek. Obrazek nie został wybrany lub ma nieprawidłowy format (poprawne: .jpg, .png, .jpeg, .gif).
+			Obrazek nie został wybrany lub ma nieprawidłowy format (poprawne: .jpg, .png, .jpeg, .gif). Obrazek nie został zaktualizowany lub został załadowany domyślny jeśli artykuł nie posiadał swojego.
 		</div>
 	{% elseif not saved and post and new == 1 %}
 		<div class="alert alert-danger" role="alert">
 		  Nie udało się dodać artykułu!
 		</div>
-	{% elseif saved and post %}
+	{% elseif saved and post and imgValidation >= 1 %}
 		<div class="alert alert-success" role="alert">
 		  Zapisano zmiany!
+		</div>
+	{% elseif saved and post and imgValidation == 0 %}
+		<div class="alert alert-success" role="alert">
+		 	Dodano artykuł!
+		</div>
+		<div class="alert alert-info" role="alert">
+			Obrazek nie został wybrany lub ma nieprawidłowy format (poprawne: .jpg, .png, .jpeg, .gif). Obrazek nie został zaktualizowany lub został załadowany domyślny jeśli artykuł nie posiadał swojego.
 		</div>
 	{% elseif not saved and post %}
 		<div class="alert alert-danger" role="alert">

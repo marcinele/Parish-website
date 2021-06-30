@@ -7,16 +7,18 @@
 	{% if selectStatus %}
 		<div class="container-fluid p-0">
 	    <div class="card text-white">
-		  <img class="card-img" src="/{{row.pathToImg}}" alt="Card image">
-		  <div class="card-img-overlay">
+			<img class="card-img" src="/{{row.pathToImg}}" alt="Card image">
+			<div class="card-img-overlay">
 		    <h5 class="card-title text-center" id="title">{{row.title}}</h5>
 		    <p class="card-subtitle text-center">{{row.subtitle}}</p>
 		    <p class="card-text text-center">Ostatnio aktualizowany: {{row.updated}}</p>
-		  </div>
-		  <div class="content">
-			{{ row.content | raw }}
+		    <div class="gradient-overlay">
+	    	</div>
 		  </div>
 		</div>
+		<div class="content">
+			{{ row.content | raw }}
+		  </div>
 		</div>
 	{% else %}
 		<div class="alert alert-danger" role="alert">

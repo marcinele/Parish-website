@@ -18,16 +18,12 @@ body {
 .card {
     background-color: #323c4b;
     position: relative;
-    border: none;
 }
-
-
 
 .content{
     margin: 10px;
     margin-left: 10vw;
     margin-right: 10vw;
-    color: white !important;
 }
 
 .card-title {
@@ -82,10 +78,9 @@ body {
 
 .gradient-overlay {
     width: 100%;
-    height: 25vh;
+    height: 200px;
     position: absolute;
-    left: 0;
     bottom: 0;
-    background: rgb(50,60,75);
-    background: linear-gradient(0deg, rgba(50,60,75,1) 0%, rgba(255,255,255,0) 100%);
+    left: 0;
+    background: red;
 }

@@ -64,7 +64,7 @@ if($post){
 		}
 
 		try{
-			$stmt = $dbh->prepare('INSERT INTO announcements (user_id, title, subtitle, content, created,  likes, pathToImg) VALUES (1, :title, :subtitle, :content, NOW(), 0, :pathToImg)');
+			$stmt = $dbh->prepare('INSERT INTO announcements (user_id, title, subtitle, content, created, updated,  likes, pathToImg) VALUES (1, :title, :subtitle, :content, NOW(), NOW(),0, :pathToImg)');
 			$stmt->execute([':title' => $title, ':subtitle' => $subtitle, ':content' => $content, ':pathToImg' => $target_file]);
 			$saved = true;
 			$new = 2;
@@ -83,6 +83,14 @@ if($post){
 			} catch (PDOException $e){
 				$saved = false;
 			} 
+		} else if ($imgValidation == 2) {
+			try{
+				$stmt = $dbh->prepare('UPDATE announcements SET title = :title, subtitle = :subtitle, content = :content, updated = NOW(), pathToImg = :pathToImg WHERE announcement_id = :id');
+				$stmt->execute([':id' => $id, ':title' => $title, ':subtitle' => $subtitle, ':content' => $content, 'pathToImg' => $target_file]);
+				$saved = true;
+			} catch (PDOException $e){
+				$saved = false;
+			}
 		} else {
 			try{
 			$stmt = $dbh->prepare('UPDATE announcements SET title = :title, subtitle = :subtitle, content = :content, updated = NOW() WHERE announcement_id = :id');
@@ -118,9 +126,16 @@ if($new == 1){
 	$stmt = $dbh->prepare("SELECT * FROM announcements WHERE announcement_id = :id");
 	$stmt->execute([':id' => $id]);
 	$article = $stmt->fetch(PDO::FETCH_ASSOC);
+	$article['title'] = htmlspecialchars($article['title'], ENT_QUOTES | ENT_HTML401, 'UTF-8');
+	$article['subtitle'] = htmlspecialchars($article['subtitle'], ENT_QUOTES | ENT_HTML401, 'UTF-8');
 }
 //$article['content'] = htmlspecialchars($article['content'], ENT_QUOTES | ENT_HTML401, 'UTF-8');
 
+/*print("img: " . $imgValidation);
+print("saved: " . $saved);
+print("post: " . $post);
+print("new: " . $new);
+*/
 echo $twig->render('edit_article.html', [
     'post' => $_POST,
     'session' => $_SESSION,

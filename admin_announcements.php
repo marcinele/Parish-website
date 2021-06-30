@@ -32,6 +32,8 @@ try{
 
 $rows = [];
 while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
+    $row['title'] = htmlspecialchars($row['title'], ENT_QUOTES | ENT_HTML401, 'UTF-8');
+    $row['subtitle'] = htmlspecialchars($row['subtitle'], ENT_QUOTES | ENT_HTML401, 'UTF-8');
     array_push($rows, $row);
 }
 
