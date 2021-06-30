@@ -25,7 +25,7 @@ function checkDateInput() {
                         document.getElementById("exampleTime").value = mass_counter + " mszy w ten dzień";
                         break;
                 }
-                deleteActualTime();
+                fillActualTime();
                 setTime(format_data(all_hours));
             }
         });
@@ -49,8 +49,8 @@ function format_data(hours) {
     return final_array;
 }
 
-function deleteActualTime() {
-    $('.timepicker').pickatime('picker').set('disable', true);
+function fillActualTime() {
+    $('.timepicker').pickatime('picker').set('disable', false);
 }
 
 function setTime(dates) {
@@ -91,16 +91,15 @@ $(document).ready(function () {
     });
     let t = setInterval(validateInput,1);
     let id;
-    $('#exampleTime').change(function() {
+    $('#submitButton').click(function() {
         $.ajax({
             data: {'actualDate': document.getElementById("exampleDate").value,
                    'actualTime': document.getElementById("exampleTime").value},
             type: 'post',
             success: function (response) {
                 id = response;
-                id = id.slice(0, -1);
-                let link = "/placeReservation/id/" + id;
-                $('#dataAndTimeForm').attr('action', link);
+                alert('Dodano msze!')
+                location.reload();
             }
         });
     });
