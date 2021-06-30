@@ -25,9 +25,10 @@ if (isset($_POST['actualDate']) && isset($_POST['actualTime'])) {
     $stmt->execute([':date' => $date, ':hour' => $hour, ':author' => $author]);
 }
 
+if (isset($_POST['chosenDate']))
+
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
-    echo"<script> console.log($id) </script>";
 }
 
 echo $twig->render('admin_reservations.html', [

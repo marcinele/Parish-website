@@ -47,11 +47,11 @@
 {% else %}
 <body class="mainContainer">
 <div class="container mainInput">
-    <form id="dataAndTimeForm" method="POST" action="">
         <div class="info" style="height: 100px; font-size: 30px;">
             Wybierz datę oraz godzinę mszy, którą chciałbyś dodać.
         </div>
         <div class="container-lg border border-secondary" style="height: 415px;">
+            <div id="correctRegisterInfo">{{ info }}</div>
             <div class="row">
                 <div class="col-md-6 container">
                     Wybierz datę.
@@ -74,7 +74,6 @@
         </button>
         <div id="info">Popraw wprowadzone dane.</div>
         <div style="height: 10px;"></div>
-    </form>
 </div>
 </body>
 {% endif %}
