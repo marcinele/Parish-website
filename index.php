@@ -56,10 +56,13 @@ if( isset($_GET['page']) && in_array($_GET['page'], $allowed_pages) ){
     }
 } else{
     include('main.php');
-} if (isset($_POST['logoutSubmit'])) {
+}
+
+if (isset($_POST['logoutSubmit'])) {
+    print'CHUJ';
     unset($_SESSION['id']);
     unset($_SESSION['email']);
     unset($_SESSION['username']);
     unset($_SESSION['permissions']);
-    echo "<script> window.location.href = '/main' </script>";
+    exit;
 }

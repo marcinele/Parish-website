@@ -36,7 +36,6 @@ body{
     color: #fff;
 }
 
-
 /* Change navbar styling on scroll */
 .navbar.active .nav-link {
     color: white;
@@ -60,8 +59,6 @@ body{
 ul li a{
     transition: all ease 0.5s;
 }
-
-
 
 .footer{
     position: absolute;

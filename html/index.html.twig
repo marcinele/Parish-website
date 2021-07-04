@@ -16,9 +16,10 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
             integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
             crossorigin="anonymous"></script>
+    <script type="text/javascript" src="/js/index.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     {% block head %}
-
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     {% endblock %}
     <link rel="stylesheet" href="/css/style.css">
     {% block style %}
@@ -65,11 +66,9 @@
                             <a class="nav-link" href="/yourAccount">{{ session.username }}</a>
                         </li>
                         <li class="nav-item">
-                            <form action="" method="POST">
                                 <a class="nav-link">
                                     <button class="logoutButton" type="submit" name="logoutSubmit"><i class="fa fa-user-times"></i></button>
                                 </a>
-                            </form>
                         </li>
                     {% else %}
                         <li class="nav-item">
@@ -93,7 +92,7 @@
 <!-- <footer class="footer mt-auto bg-dark">
   <div class="container">
     <div class="row justify-content-between">        
-        <span>Parafia pod wezwaniem Bitcoina</span>
+        <span>Parafia Miłosierdzia Bożego w Borkach</span>
         <span>Marcin Bednarz & Adrian Ciesielczyk</span>
     </div>
   </div>

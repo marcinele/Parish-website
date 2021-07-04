@@ -5,27 +5,32 @@
     <link rel="stylesheet" type="text/css" href="/css/login.css">
 {% endblock %}
 
+{% block head %}
+    <script type="text/javascript" src="/js/login.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+{% endblock %}
+
 {% block content %}
 <div class="span">
     <div class="register_login">
-        <form method="POST" action="">
+        <div class="centralDiv">
             <p style="font-size:40px; font-weight: bold;">Zaloguj się</p> <br>
             <label>
                 <p class="label-txt">Adres email</p>
-                <input type="text" name="loginEmail" class="input" required>
+                <input id="email" type="text" name="loginEmail" class="input" required>
                 <div class="line-box">
                     <div class="line"></div>
                 </div>
             </label> <br>
             <label>
                 <p class="label-txt">Hasło</p>
-                <input type="password" name="password" class="input" required>
+                <input id="password" type="password" name="password" class="input" required>
                 <div class="line-box">
                     <div class="line"></div>
                 </div>
             </label> <br>
-            <button type="submit" name="loginSubmit">Zaloguj się</button>
-        </form>
+            <button id="submitButton" type="submit" name="loginSubmit" >Zaloguj się</button>
+        </div>
     </div>
 </div>
 {% endblock %}

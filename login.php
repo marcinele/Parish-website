@@ -5,7 +5,7 @@ echo $twig->render('login.html', [
     'session' => $_SESSION,
     'get' => $_GET]);
 
-if (isset($_POST['loginSubmit'])) {
+if (isset($_POST['loginEmail']) && isset($_POST['password'])) {
     $stmt = $dbh->prepare("SELECT * FROM users WHERE email = :email");
     $stmt->execute([':email' => $_POST['loginEmail']]);
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -15,7 +15,7 @@ if (isset($_POST['loginSubmit'])) {
             $_SESSION['email'] = $user['email'];
             $_SESSION['username'] = $user['username'];
             $_SESSION['permissions'] = $user['permissions'];
-            echo "<script> window.location.href = '/main' </script>";
+            echo "<script> alert('Poprawnie zalogowano!') </script>";
         } else {
             echo "<script> alert('Podano niepoprawne hasło.') </script>";
         }
