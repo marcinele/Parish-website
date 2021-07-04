@@ -1,11 +1,7 @@
 <?php
 
-echo $twig->render('login.html', [
-    'post' => $_POST,
-    'session' => $_SESSION,
-    'get' => $_GET]);
-
 if (isset($_POST['loginEmail']) && isset($_POST['password'])) {
+    $output = 0;
     $stmt = $dbh->prepare("SELECT * FROM users WHERE email = :email");
     $stmt->execute([':email' => $_POST['loginEmail']]);
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -15,12 +11,18 @@ if (isset($_POST['loginEmail']) && isset($_POST['password'])) {
             $_SESSION['email'] = $user['email'];
             $_SESSION['username'] = $user['username'];
             $_SESSION['permissions'] = $user['permissions'];
-            echo "<script> alert('Poprawnie zalogowano!') </script>";
+            $output = 1;
         } else {
-            echo "<script> alert('Podano niepoprawne hasło.') </script>";
+            $output = 2;
         }
     } else {
-        echo "<script> alert('Podany email jest niepoprawny.') </script>";
+        $output = 3;
     }
+    echo $output;
+    exit;
 }
 
+echo $twig->render('login.html', [
+    'post' => $_POST,
+    'session' => $_SESSION,
+    'get' => $_GET]);

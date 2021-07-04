@@ -1,8 +1,7 @@
 body {
     display:flex;
     font-family: 'Montserrat', sans-serif;
-    background: url("/Images/choir_register.jpg");
-    background-repeat: no-repeat;
+    background: url("/Images/choir_register.jpg") no-repeat;
     background-size: cover;
 }
 

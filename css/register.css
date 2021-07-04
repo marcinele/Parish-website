@@ -1,11 +1,15 @@
 @import "register&login.css";
 
 body {
-    display:flex;
     font-family: 'Montserrat', sans-serif;
-    background: url("/Images/choir_register.jpg");
-    background-repeat: no-repeat;
     background-size: cover;
+    background: url("/Images/choir_register.jpg") no-repeat;
+}
+
+.register_login{
+    width: 150px;
+    min-width: 100px;
+    max-width: 200px;
 }
 
 .glyphicon-remove {
@@ -22,6 +26,7 @@ body {
 
 .reCaptchaDiv {
     text-align: center;
+    display: inline-block;
 }
 
 .g-recaptcha {
