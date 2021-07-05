@@ -1,6 +1,6 @@
 <?php
 session_start();
-ini_set('display_errors', 0); // Przenieść errory do jakiegoś loggera na końcu roboty
+ini_set('display_errors', 0);
 error_reporting(E_ALL);
 require __DIR__ . '/vendor/autoload.php';
 
@@ -46,20 +46,12 @@ if( isset($_GET['page']) && in_array($_GET['page'], $allowed_pages) ){
     } else {
         print 'permission denied';
     }
-    
 
-    $page = $_GET['page'];
-    if(file_exists($page . '.php')){
-        include($page . '.php');
-    } else {
-        print 'Dany plik nie istnieje!';
-    }
 } else{
     include('main.php');
 }
 
 if (isset($_POST['logoutSubmit'])) {
-    print'CHUJ';
     unset($_SESSION['id']);
     unset($_SESSION['email']);
     unset($_SESSION['username']);

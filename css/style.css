@@ -36,7 +36,7 @@ body{
 }
 
 /* Change navbar styling on scroll */
-.navbar.active .nav-link {
+.navbar.active .nav-link, .logoutButton {
     color: white;
 }
 
@@ -66,4 +66,10 @@ ul li a{
     height: 60px;
     line-height: 60px;
     background-color: #f5f5f5;
+}
+
+#login{
+    display:block;
+    text-align:center;
+    pointer-events: none;
 }

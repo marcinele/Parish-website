@@ -5,7 +5,13 @@ $(document).ready(function () {
                 data: {'logoutSubmit': 'null'},
                 type: 'post',
                 success: function (response) {
-                    window.location.href = '';
+                    let pathname = window.location.pathname;
+                    alert(pathname)
+                    if (pathname.startsWith('/admin'))
+                        window.location.href = '/main';
+                    else {
+                        window.location.href = '';
+                    }
                 }
             });
         });

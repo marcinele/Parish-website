@@ -65,8 +65,6 @@ if($post){
 
 		try{
 			$stmt = $dbh->prepare('INSERT INTO announcements (user_id, title, subtitle, content, created, updated,  likes, pathToImg) VALUES (1, :title, :subtitle, :content, NOW(), NOW(),0, :pathToImg)');
-
-			$stmt = $dbh->prepare('INSERT INTO announcements (user_id, title, subtitle, content, created,  likes, pathToImg) VALUES (1, :title, :subtitle, :content, NOW(), 0, :pathToImg)');
 			$stmt->execute([':title' => $title, ':subtitle' => $subtitle, ':content' => $content, ':pathToImg' => $target_file]);
 			$saved = true;
 			$new = 2;
@@ -138,10 +136,6 @@ print("saved: " . $saved);
 print("post: " . $post);
 print("new: " . $new);
 */
-
-}
-//$article['content'] = htmlspecialchars($article['content'], ENT_QUOTES | ENT_HTML401, 'UTF-8');
-
 echo $twig->render('edit_article.html', [
     'post' => $_POST,
     'session' => $_SESSION,
