@@ -6,7 +6,6 @@ $(document).ready(function () {
                 type: 'post',
                 success: function (response) {
                     let pathname = window.location.pathname;
-                    alert(pathname)
                     if (pathname.startsWith('/admin'))
                         window.location.href = '/main';
                     else {
