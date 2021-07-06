@@ -1,7 +1,7 @@
 # Overview
 Website for the use of local parish created for the project for "WWW and Script Languages" subject on AGH UST.
 <br>
-Whole project was made from the scratch, except for the date and time picker (can be seen on the /reseravtions page). 
+The whole project was made from the scratch, except for the date and time pickers (can be seen on the /reservations page). 
 We used javascript library created by [**Amsul**](https://github.com/amsul). (https://github.com/amsul/pickadate.js). 
 
 # Main features
