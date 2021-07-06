@@ -13,7 +13,10 @@ Reservation page gives a logged user an option to reserve a place in the church 
 ### Donate
 User can donate the church with any amount of money using cryptocurrencies.
 
-Website can be found [here](https://s103.labagh.pl/). If the link doesn't work, check [directory]() with screenshots 
+# Links
+Website can be found [here](https://s103.labagh.pl/). If the link doesn't work, check 
+[directory](https://github.com/marcinele/parafia-pod-wezwaniem-bitcoina/tree/main/Screenshots%20from%20the%20website) 
+with screenshots 
 that we prepared.
 <br><br>
 
