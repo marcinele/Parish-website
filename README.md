@@ -9,9 +9,9 @@ We used javascript library created by [**Amsul**](https://github.com/amsul). (ht
 Website supports full CRUD for parish announcements (only for admin). <br> Admin can also add a new mass to the calendar.
 <br>
 ### Seat reservations (COVID edition)
-Reservation page gives a logged user an option to reserve a seat in the church for the previously chosen mass.
-![alt text](https://github.com/marcinele/parafia-pod-wezwaniem-bitcoina/blob/main/Screenshots%20from%20the%20website/reservation1.png) <br>
-User can check the box if he was twice vaccinated, which let him choose the seats that were blocked due to the COVID restrictions.
+Reservation page gives a logged user an option to reserve a seat in the church for the previously chosen mass. <br> <br>
+![alt text](https://github.com/marcinele/parafia-pod-wezwaniem-bitcoina/blob/main/Screenshots%20from%20the%20website/reservation1.png) <br> <br>
+User can check the box if he was twice vaccinated, which let him choose the seats that were blocked due to the COVID restrictions. <br> <br>
 ![alt text](https://github.com/marcinele/parafia-pod-wezwaniem-bitcoina/blob/main/Screenshots%20from%20the%20website/reservation2.png)
 ### Donate
 User can donate the church with any amount of money using cryptocurrencies.
