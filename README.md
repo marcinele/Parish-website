@@ -6,18 +6,17 @@ We used javascript library created by [**Amsul**](https://github.com/amsul). (ht
 
 # Main features
 ### Admin panel
-Website supports full CRUD for parish announcements (only for admin). <br> Admin can also add new mass to the calendar.
+Website supports full CRUD for parish announcements (only for admin). <br> Admin can also add a new mass to the calendar.
 <br>
 ### Reservations
-Reservation page gives a logged user an option to reserve a place in the church for the previously chosen mass.
+Reservation page gives a logged user an option to reserve a seat in the church for the previously chosen mass.
 ### Donate
 User can donate the church with any amount of money using cryptocurrencies.
 
 # Links
 Website can be found [here](https://s103.labagh.pl/). If the link doesn't work, check 
 [directory](https://github.com/marcinele/parafia-pod-wezwaniem-bitcoina/tree/main/Screenshots%20from%20the%20website) 
-with screenshots 
-that we prepared.
+with screenshots that we prepared.
 <br><br>
 
 ---
