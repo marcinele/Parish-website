@@ -8,8 +8,11 @@ We used javascript library created by [**Amsul**](https://github.com/amsul). (ht
 ### Admin panel
 Website supports full CRUD for parish announcements (only for admin). <br> Admin can also add a new mass to the calendar.
 <br>
-### Reservations
+### Seat reservations (COVID edition)
 Reservation page gives a logged user an option to reserve a seat in the church for the previously chosen mass.
+![alt text](Screenshots from the website\reservation1.png) <br>
+User can check the box if he was twice vaccinated, which let him choose the seats that were blocked due to the COVID restrictions.
+![alt text](Screenshots from the website\reservation2.png)
 ### Donate
 User can donate the church with any amount of money using cryptocurrencies.
 
