@@ -12,15 +12,15 @@
         	Ogłoszenia
     	</div>
     	<a href="/edit_article/new">
-	        <button class="add_new btn btn-light">Dodaj nowe ogłoszenie</button>
+	        <button class="add_new btn btn-light">Add new announcement</button>
 	    </a>
     	<div class="card-body">
     		<table class="table table-striped mt-3">
           		<thead>
             		<tr id="wiersz-naglowka">
-              			<th scope="col">Tytuł</th>
-              			<th scope="col">Dodano</th>
-              			<th scope="col">Edytowano</th>
+              			<th scope="col">Title</th>
+              			<th scope="col">Added date</th>
+              			<th scope="col">Edited date</th>
               			<th scope="col"></th>
               			<th scope="col"></th>
             		</tr>
@@ -38,19 +38,19 @@
 	                  		</td>
 	                  		<td>
 	                  			<a href="/edit_article/id/{{ row.announcement_id }}">
-	                  				<button class="btn btn-light">Edytuj</button>
+	                  				<button class="btn btn-light">Edit</button>
 	                  			</a>
 	                  		</td>
 	                  		<td>
 	                  			<a href="/admin_announcements/delete/{{ row.announcement_id }}">
-	                  				<button class="btn btn-light">Usuń</button>
+	                  				<button class="btn btn-light">Delete</button>
 	                  			</a>
 	                  		</td>
 	                  	</tr>
 	          		{% endfor %}
 	          	{% else %}
 		          	<div class="alert alert-danger" role="alert">
-					  Nie udało się pobrać danych z bazy.
+					  Failed to download data from the database.
 					</div>
 	          	{% endif %}
           	</tbody>
@@ -59,11 +59,11 @@
 	</div>
 	{% if isDelete and deleted %}
 		<div class="alert alert-success" role="alert">
-		  Udało się usunąć ogłoszenie.
+			Announcement was deleted successfully.
 		</div>
 	{% elseif isDelete and not deleted %}
 		<div class="alert alert-danger" role="alert">
-		  Wystąpił błąd podczas usuwania.
+			An error occurred while trying to delete the announcement.
 		</div>
 	{% endif %}
 {% endblock %}

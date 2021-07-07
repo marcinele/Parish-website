@@ -7,12 +7,11 @@
 	{% if selectStatus %}
 		<div class="container-fluid p-0">
 	    <div class="card text-white">
-<<<<<<< HEAD
 			<img class="card-img" src="/{{row.pathToImg}}" alt="Card image">
 			<div class="card-img-overlay">
 		    <h5 class="card-title text-center" id="title">{{row.title}}</h5>
 		    <p class="card-subtitle text-center">{{row.subtitle}}</p>
-		    <p class="card-text text-center">Ostatnio aktualizowany: {{row.updated}}</p>
+		    <p class="card-text text-center">updated : {{row.updated}}</p>
 		    <div class="gradient-overlay">
 	    	</div>
 		  </div>
@@ -21,22 +20,9 @@
 			{{ row.content | raw }}
 		  </div>
 		</div>
-=======
-		  <img class="card-img" src="/{{row.pathToImg}}" alt="Card image">
-		  <div class="card-img-overlay">
-		    <h5 class="card-title text-center" id="title">{{row.title}}</h5>
-		    <p class="card-subtitle text-center">{{row.subtitle}}</p>
-		    <p class="card-text text-center">Ostatnio aktualizowany: {{row.updated}}</p>
-		  </div>
-		  <div class="content">
-			{{ row.content | raw }}
-		  </div>
-		</div>
-		</div>
->>>>>>> fda638a2bdec83c71a32dd3c4f54660290a329df
 	{% else %}
 		<div class="alert alert-danger" role="alert">
-			Nie udało się pobrać danych z bazy.
-        </div>
+			Failed to download data from the database.
+		</div>
     {% endif %}
 {% endblock %}

@@ -66,10 +66,10 @@ function formatExampleCells() {
         table.rows[1].cells[0].classList.add('selected');
         table.rows[2].cells[0].classList.add('taken');
         table.rows[3].cells[0].classList.add('forbidden');
-        table.rows[0].cells[1].innerText = "Wolne";
-        table.rows[1].cells[1].innerText = "Wybrane przez Ciebie";
-        table.rows[2].cells[1].innerText = "Zajęte";
-        table.rows[3].cells[1].innerText = "Niedostępne z powodu obostrzeń";
+        table.rows[0].cells[1].innerText = "Available";
+        table.rows[1].cells[1].innerText = "Chosen by you";
+        table.rows[2].cells[1].innerText = "Taken";
+        table.rows[3].cells[1].innerText = "Not available due to the restrictions";
     });
 }
 
@@ -200,9 +200,6 @@ function setColorOnClick() {
                     }
                 }
             }
-            /*alert(finalDataTaken);
-            alert(finalDataForbidden);*/
-            /*alert('Robię ostatniego posta - info z js.')*/
             $.ajax({
                 data: {'finalPostTaken': finalDataTaken},
                 type: 'post',

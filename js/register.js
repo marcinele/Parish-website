@@ -59,7 +59,7 @@ function RepeatedPassword() {
 }
 
 function registerInfo(){
-    if ($('#correctRegisterInfo').text() == 'Poprawnie zarejestrowano!'){
+    if ($('#correctRegisterInfo').text() == 'Registered successfully!'){
         $('#correctRegisterInfo').addClass("success");
         $('#correctRegisterInfo').removeClass("problem");
     }

@@ -29,12 +29,12 @@ if (isset($_POST['registerSubmit']) && $isBot == False) {
             $stmt = $dbh->prepare("INSERT INTO users (id, username, email, password, created)
                                          VALUES (null, :username, :email, :password, NOW())");
             $stmt->execute([':username' => $username, ':email' => $email, ':password' => $password_hash]);
-            $info = 'Poprawnie zarejestrowano!';
+            $info = 'Successfully registered! ';
         } catch (PDOException $e) {
-            $info = 'Podany adres email jest już zajęty!';
+            $info = 'Email address is already taken!';
         }
     } else {
-        $info = 'Niepoprawny adres email!';
+        $info = 'Incorrect email address!';
     }
 }
 

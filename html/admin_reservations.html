@@ -18,8 +18,6 @@
 <script src="../DatePicker/lib/picker.js"></script>
 <!-- Date Picker -->
 <script src="../DatePicker/lib/picker.date.js"></script>
-<!-- Language -->
-<script src="../DatePicker/lib/translations/pl_PL.js"></script>
 <!-- Required For Legacy Browsers (IE 8-) -->
 <script src="../DatePicker/lib/legacy.js"></script>
 <!-- Time Picker -->
@@ -41,23 +39,23 @@
 {% if(session.id is not defined and session.email is not defined) %}
 <div class="container-lg" style="height: 215px;">
     <div class="didntLogin" style="height: 200px; font-size: 30px;">
-        <a href="/login">Zaloguj się </a>, by zarezerwować mszę.
+        <a href="/login">Log in </a> to add a mass.
     </div>
 </div>
 {% else %}
 <body class="mainContainer">
 <div class="container mainInput">
         <div class="info" style="height: 100px; font-size: 30px;">
-            Wybierz datę oraz godzinę mszy, którą chciałbyś dodać.
+            Select the date and time of the mass you want to add.
         </div>
         <div class="container-lg border border-secondary" style="height: 415px;">
             <div id="correctRegisterInfo">{{ info }}</div>
             <div class="row">
                 <div class="col-md-6 container">
-                    Wybierz datę.
+                    Please select a date.
                 </div>
                 <div class="col-md-6 container">
-                    Wybierz godzinę.
+                    Please select an hour.
                 </div>
                 <br>
                 <div class="col-md-6 container">
@@ -65,14 +63,14 @@
                 </div>
                 <div class="col-md-6 container">
                     <input id="exampleTime" class="timepicker" type="time" name="time"
-                           value="Najpierw wybierz dzień."/>
+                           value="Select the date."/>
                 </div>
             </div>
         </div>
         <button class ="submitButton" id="submitButton" type="submit">
             Dodaj <i class="fa fa-arrow-right" aria-hidden="true"></i>
         </button>
-        <div id="info">Popraw wprowadzone dane.</div>
+        <div id="info">Correct the entered data.</div>
         <div style="height: 10px;"></div>
 </div>
 </body>

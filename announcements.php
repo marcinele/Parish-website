@@ -13,7 +13,7 @@ if(isset($_GET['show'])){
         $selectStatus = false;
     }
 
-    $row;
+    $row = 0;
 
     if($selectStatus){
         $row = $stmt->fetch(PDO::FETCH_ASSOC);

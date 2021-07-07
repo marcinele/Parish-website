@@ -2,7 +2,6 @@
 
 $counter = 0;
 $actual_link = '';
-$info='';
 
 if(isset($_GET['id'])){
     $id = $_GET['id'];
@@ -23,7 +22,6 @@ if(isset($_GET['id'])){
 if (isset($_POST['finalPostTaken'])) {
     $counter = 1;
     $all_data = $_POST['finalPostTaken'];
-    $info = 'Zarezerwowano ' . count($all_data) . ' miejsc.';
     foreach($all_data as $item){
         $taken_column = $item[0];
         $taken_x = $item[1];
@@ -84,13 +82,12 @@ if (isset($_POST['firstPostForbiddenPlaces'])) {
 }
 
 if($counter == 0) {
-    echo $twig->render('placeReservation.html.twig', [
+    echo $twig->render('seatsReservation.html.twig', [
         'post' => $_POST,
         'session' => $_SESSION,
         'get' => $_GET,
         'date' => $date,
         'hour' => $hour,
         'author' => $author,
-        'info' => $info,
         'link' => $actual_link]);
 }

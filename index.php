@@ -23,7 +23,7 @@ if (isset($config) && is_array($config)) {
     exit("Nie znaleziono konfiguracji bazy danych.");
 }
 
-$allowed_pages = ['main', 'announcements', 'donate', 'login', 'register', 'reservations', 'placeReservation'];
+$allowed_pages = ['main', 'announcements', 'donate', 'login', 'register', 'reservations', 'seatsReservation'];
 
 $protected_pages = ['admin', 'admin_announcements', 'admin_reservations', 'add_article', 'add_reservation', 'edit_article'];
 

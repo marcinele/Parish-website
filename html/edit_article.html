@@ -18,60 +18,52 @@
 		{% endif %}
 			<div class="input-group mb-3">
 				<div class="input-group-prepend">
-				    <span class="input-group-text" id="basic-addon1">Tytuł</span>
+				    <span class="input-group-text" id="basic-addon1">Title</span>
 				</div>
-				<input type="text" class="form-control" placeholder="Tytuł" aria-label="Tytuł" aria-describedby="basic-addon1" name="title" value="{{ article.title }}">
+				<input type="text" class="form-control" placeholder="Title" aria-label="Tytuł" aria-describedby="basic-addon1" name="title" value="{{ article.title }}">
 			</div>
 			<div class="input-group mb-3">
 				<div class="input-group-prepend">
-				    <span class="input-group-text" id="basic-addon1">Podtytuł</span>
+				    <span class="input-group-text" id="basic-addon1">Subtitle</span>
 				</div>
-				<input type="text" class="form-control" placeholder="Podtytuł" aria-label="Tytuł" aria-describedby="basic-addon1" name="subtitle" value="{{ article.subtitle }}">
+				<input type="text" class="form-control" placeholder="Subtitle" aria-label="Tytuł" aria-describedby="basic-addon1" name="subtitle" value="{{ article.subtitle }}">
 			</div>
 			<textarea name="content" class="art-editor">{{ article.content }}</textarea>
 			<br>
-			<p id="choose_img">Wybierz obrazek: </p>
+			<p id="choose_img">Choose an image: </p>
   			<input type="file" name="fileToUpload" id="fileToUpload">
   			<br>
-			<input class="submit_input" type="submit" value="Zapisz">
+			<input class="submit_input" type="submit" value="Save">
 		</form>
 	</div>
 
-
-	{% if saved and post and new == 2 and imgValidation > 0 %}
+	{% if saved and post and new == 2 and imgValidation >= 1 %}
 		<div class="alert alert-success" role="alert">
-		  Dodano artykuł!
+		  Article added!
 		</div>
 	{% elseif saved and post and new == 2 and imgValidation == 0 %}
 		<div class="alert alert-success" role="alert">
-		 	Dodano artykuł!
+			Article added!
 		</div>
 		<div class="alert alert-info" role="alert">
-			Obrazek nie został wybrany lub ma nieprawidłowy format (poprawne: .jpg, .png, .jpeg, .gif). Obrazek nie został zaktualizowany lub został załadowany domyślny jeśli artykuł nie posiadał swojego.
-		</div>
+			The image is not selected or has the wrong format (valid: .jpg, .png, .jpeg, .gif). The image has not been updated or a default image has been loaded if the article did not have one. 		</div>
 	{% elseif not saved and post and new == 1 %}
 		<div class="alert alert-danger" role="alert">
 		  Nie udało się dodać artykułu!
 		</div>
 	{% elseif saved and post and imgValidation >= 1 %}
 		<div class="alert alert-success" role="alert">
-		  Zapisano zmiany!
+			Changes saved!
 		</div>
 	{% elseif saved and post and imgValidation == 0 %}
 		<div class="alert alert-success" role="alert">
-		 	Dodano artykuł!
+			Article added!
 		</div>
 		<div class="alert alert-info" role="alert">
-			Obrazek nie został wybrany lub ma nieprawidłowy format (poprawne: .jpg, .png, .jpeg, .gif). Obrazek nie został zaktualizowany lub został załadowany domyślny jeśli artykuł nie posiadał swojego.
-		</div>
-
-	{% elseif saved and post %}
-		<div class="alert alert-success" role="alert">
-		  Zapisano zmiany!
-		</div>
+			The image is not selected or has the wrong format (valid: .jpg, .png, .jpeg, .gif). The image has not been updated or a default image has been loaded if the article did not have one. 		</div>
 	{% elseif not saved and post %}
 		<div class="alert alert-danger" role="alert">
-		  Nie udało się zapisać zmian!
+			Failed to save changes!
 		</div>
 	{% endif %}
 {% endblock %}

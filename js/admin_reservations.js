@@ -11,18 +11,13 @@ function checkDateInput() {
                 let mass_counter = all_hours.split(" ").length - 1;
                 switch(mass_counter){
                     case 0:
-                        document.getElementById("exampleTime").value = "Brak mszy w ten dzień.";
+                        document.getElementById("exampleTime").value = "No masses added.";
                         break;
                     case 1:
-                        document.getElementById("exampleTime").value = mass_counter + " msza w ten dzień";
-                        break;
-                    case 2:
-                    case 3:
-                    case 4:
-                        document.getElementById("exampleTime").value = mass_counter + " msze w ten dzień";
+                        document.getElementById("exampleTime").value = mass_counter + " mass added.";
                         break;
                     default:
-                        document.getElementById("exampleTime").value = mass_counter + " mszy w ten dzień";
+                        document.getElementById("exampleTime").value = mass_counter + " masses added.";
                         break;
                 }
                 fillActualTime();
@@ -98,7 +93,7 @@ $(document).ready(function () {
             type: 'post',
             success: function (response) {
                 id = response;
-                alert('Dodano msze!')
+                alert('Mass added!')
                 location.reload();
             }
         });

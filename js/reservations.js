@@ -11,18 +11,13 @@ function checkDateInput() {
                 let mass_counter = all_hours.split(" ").length - 1;
                 switch(mass_counter){
                     case 0:
-                        document.getElementById("exampleTime").value = "Brak mszy w ten dzień.";
+                        document.getElementById("exampleTime").value = "No masses available.";
                         break;
                     case 1:
-                        document.getElementById("exampleTime").value = mass_counter + " msza w ten dzień";
-                        break;
-                    case 2:
-                    case 3:
-                    case 4:
-                        document.getElementById("exampleTime").value = mass_counter + " msze w ten dzień";
+                        document.getElementById("exampleTime").value = mass_counter + " mass available.";
                         break;
                     default:
-                        document.getElementById("exampleTime").value = mass_counter + " mszy w ten dzień";
+                        document.getElementById("exampleTime").value = mass_counter + " masses available.";
                         break;
                 }
                 deleteActualTime();
@@ -106,7 +101,7 @@ $(document).ready(function () {
             success: function (response) {
                 id = response;
                 id = id.slice(0, -1);
-                let link = "/placeReservation/id/" + id;
+                let link = "/seatsReservation/id/" + id;
                 $('#dataAndTimeForm').attr('action', link);
             }
         });

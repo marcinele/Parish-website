@@ -4,6 +4,7 @@ $isDelete = false;
 $delete_id = 0;
 $deleted = false;
 $selectStatus = false;
+$temp = false;
 
 if(isset($_GET['delete'])){
     $delete_id = $_GET['delete'];

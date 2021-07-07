@@ -10,14 +10,14 @@ $(document).ready(function () {
                     let output = parseInt(response);
                     switch(output){
                         case 1:
-                            alert('Poprawnie zalogowano!');
+                            alert('Successfully logged in.');
                             window.location.href = '/main';
                             break;
                         case 2:
-                            alert('Niepoprawne hasło. Spróbuj ponownie.');
+                            alert('Incorrect password. Try again.');
                             break;
                         default:
-                            alert('Nie znaleziono podanego adresu email w bazie. Spróbuj ponownie.');
+                            alert('The given e-mail address was not found in the database. Try again.');
                             break;
                     }
                 }
