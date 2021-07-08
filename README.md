@@ -11,8 +11,9 @@ Website supports full CRUD for parish announcements (only for admin). <br> Admin
 ### Seat reservations (COVID edition)
 Reservation page gives a logged user an option to reserve a seat in the church for the previously chosen mass. <br> <br>
 ![alt text](https://github.com/marcinele/parafia-pod-wezwaniem-bitcoina/blob/main/Screenshots%20from%20the%20website/reservation1.png) <br> <br>
-User can check the box if he was twice vaccinated, which let him choose the seats that were blocked due to the COVID restrictions. <br> <br>
-![alt text](https://github.com/marcinele/parafia-pod-wezwaniem-bitcoina/blob/main/Screenshots%20from%20the%20website/reservation2.png)
+User can check the box if he was vaccinated twice, which let him choose the seats that were blocked due to the COVID restrictions. <br> <br>
+![alt text](https://github.com/marcinele/parafia-pod-wezwaniem-bitcoina/blob/main/Screenshots%20from%20the%20website/reservation2.png) <br> <br>
+If you want to check this feature yourself, go into the /reservations and pick 3rd of October - there are some masses added by the admin. 
 ### Donate
 User can donate the church with any amount of money using cryptocurrencies.
 
